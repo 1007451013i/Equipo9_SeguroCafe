@@ -1,0 +1,3 @@
+departamento,S1_corr_yyhat,S1_OK,S2_VIF_medio,S2_Justifica_Ridge_L2,S3_Shapiro_p,S3_JB_p,S3_OK,S4_DW,S4_OK,S5_Spearman_p,S5_OK
+Narino,0.359,True,1641.1,True,0.3085,0.5575,True,0.372,False,0.8502,True
+Quindio,0.815,True,3386.9,True,0.1006,0.5169,True,0.566,False,0.1952,True

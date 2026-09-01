@@ -44,7 +44,6 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# === Logs y temporales del proyecto Equipo 9 (NO subir a GitHub) ===
 logs/
 _ESTADO.txt
 _auto_stdout.txt

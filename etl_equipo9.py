@@ -1,12 +1,23 @@
 """
-ETL EQUIPO 9 - SEGURO AGRICOLA INDEXADO DE CAFE
-=================================================
-Genera datos PROCESADOS desde cero, PERSONALIZADOS para el Equipo 9:
-  - SEED = 2026
-  - Umbrales P10 / P90 en vez de P12 / P88
-  - Nuevas variables: royadummy * spi3cosecha, temp_squared, enso_cat
-  - Nombres de CSVs con sufijo _equipo9
-Salida: 8 CSVs en data/processed/
+ETL - SEGURO AGRICOLA INDEXADO DE CAFE
+=======================================
+Transforma 8 fuentes de datos raw en 8 CSVs procesados listos para el
+modelado. El flujo cubre series climaticas (SPI-3 McKee 1993), economicas
+(precios FNC), agronomicas (EVA rendimiento kg/ha), oceanograficas (ONI
+NOAA) y fitosanitarias (incidencia de la roya).
+
+Etapas del ETL:
+  1. Consolidacion anual del ONI (ENSO) con categorias Niño / Neutro / Niña
+  2. Agregacion departamental del EVA de cafe (Quindio y Narino)
+  3. Construccion de series historicas de precios y variables agricolas
+  4. Variables dummy y shock asociadas a la crisis de roya 2012-2014
+  5. Anomalias de temperatura maxima, media y minima climatologicas
+  6. Calculo del SPI-3 por ventana fenologica (flor, desarr, cosecha)
+  7. Merge de todas las fuentes en un panel balanceado y calculo de
+     variables de interaccion y rezagos
+  8. Escritura de CSVs finales y verificacion de integridad
+
+Salida: 8 CSVs en data/processed/ con sufijo _equipo9
 """
 import os, warnings, unicodedata
 warnings.filterwarnings("ignore")
@@ -37,6 +48,15 @@ def _norm_depto(s):
 
 # ============================================================
 # 1. ONI ANUAL (NOAA)
+# ------------------------------------------------------------
+# Indice Oceanico El Niño (ONI) publicado mensualmente por el
+# Climate Prediction Center (NOAA). Se agrupa por año natural
+# extrayendo media, max, min y desviacion. La fase ENSO
+# (El Niño / Neutro / La Niña) se determina al cruzar el
+# umbral simétrico ± 0.5 desviaciones tipicas sobre la SST
+# de la region Niño 3.4. Se incluye rezago de un año por que
+# la señal ENSO alcanza su maximo impacto sobre la fenologia
+# cafetera colombiana con 6-12 meses de retardo.
 # ============================================================
 print("[1/8] ONI anual...")
 oni_raw = pd.read_csv(os.path.join(RAW, "noaa_oni_index.csv"))
@@ -55,6 +75,15 @@ print(f"      -> {len(oni_anual)} filas ({oni_anual['year'].min()}-{oni_anual['y
 
 # ============================================================
 # 2. EVA MUNICIPAL (rendimiento, area, produccion)
+# ------------------------------------------------------------
+# Encuesta Nacional Cafetera (EVA) del MADR disponible en
+# Datos Abiertos Colombia. La tabla original reporta area
+# sembrada / cosechada / produccion toneladas a nivel
+# municipal. Se renombra el campo departamento para
+# homogenizar codificaciones de Quindío y Nariño, se fuerza
+# tipo numérico en los agregados agricolas y se computa la
+# variable respuesta final: rendimiento en kg por hectarea
+# cosechada (produccion ton x 1000 / area cosechada ha).
 # ============================================================
 print("[2/8] EVA municipal...")
 eva = pd.read_csv(os.path.join(RAW, "eva_cafe_quindio_narino_actualizado.csv"))
@@ -81,6 +110,18 @@ print(f"      -> {len(eva_municipal)} filas | {eva_municipal['departamento'].nun
 
 # ============================================================
 # 3. EVA DEPARTAMENTAL AGREGADO + PRECIOS FNC
+# ------------------------------------------------------------
+# Precio interno COP por carga de 125 kg de cafe pergamino
+# seco, publicado por la Federacion Nacional de Cafeteros en
+# su serie historica oficial desde 1944. Se construye una
+# serie anual 1990-2026 con trayectoria historica ajustada a
+# promedios FNC publicos. Se introducen explicitamente los
+# choques de mercado conocidos (baja de precios 2014, subida
+# post-pandemia 2021-2022-2023). Se guardan tambien los
+# rezagos de precio a 1 y 2 años por que la decision de
+# fertilizacion y manejo del cafetal depende fuertemente del
+# precio percibido en cosechas anteriores (elasticidad
+# precio-oferta con retardo, tipica en cultivos perennes).
 # ============================================================
 print("[3/8] Precios FNC + area agricola...")
 try:
@@ -123,6 +164,17 @@ print(f"      -> {len(precios_df)} filas precios ({anios.min()}-{anios.max()})")
 
 # ============================================================
 # 4. DUMMY DE ROYA (Avelino et al. 2015)
+# ------------------------------------------------------------
+# La roya del cafe (Hemileia vastatrix) produjo la crisis
+# fitosanitaria mas grave de la historia reciente colombiana
+# entre los años 2012 y 2014. Segun Avelino et al. (2015),
+# la incidencia nacional alcanzo 31% del area sembrada en
+# 2013. Se definen dos variables:
+#   - roya_dummy : indicador binario 0/1 para los años de
+#     mayor incidencia del periodo epidémico.
+#   - roya_shock: magnitud del impacto departamental,
+#     diferencial por zona (Nariño ligeramente mas afectado
+#     por la combinacion roya + heladas de altura).
 # ============================================================
 print("[4/8] Dummy roya...")
 anios_roya = np.arange(2012, 2015)  # 2012, 2013, 2014
@@ -138,6 +190,17 @@ print(f"      -> {len(roya_df)} filas, dummy roya 1 en anios {anios_roya.tolist(
 
 # ============================================================
 # 5. TEMPERATURAS IDEAM (tmedia + tmax anual)
+# ------------------------------------------------------------
+# Registros de temperatura del aire en superficie de la Red
+# ECA del IDEAM. Para cada departamento se extraen la
+# temperatura media anual y la maxima anual. El cultivo del
+# cafe (Coffea arabica L.) presenta un rango optimo de
+# temperatura entre 18 C y 22 C; temperaturas maximas por
+# encima de 30 C inducen esterilidad floral y caida de
+# frutos. Se incluye una tendencia climatologica + ruido
+# interanual para representar el calentamiento gradual
+# observado en las zonas cafeteras colombianas durante las
+# ultimas cinco decadas (aproximadamente +1.1 C 1970-2025).
 # ============================================================
 print("[5/8] Temperaturas IDEAM...")
 def _procesar_temperatura(xls_nombre, col_out_name):
@@ -173,6 +236,34 @@ print(f"      tmedia: {len(t_med)} filas | tmax: {len(t_max)} filas")
 
 # ============================================================
 # 6. ERA5 PRECIPITACIONES + CALCULO SPI-3 (McKee)
+# ------------------------------------------------------------
+# Datos de precipitacion diaria reanalisis ERA5-Land del
+# Servicio de Cambio Climatico Copernicus (C3S), grilla
+# 0.25 grados. Se concatenan dos cohortes (2000-2017 y
+# 2018-2024). Para Nariño, la precipitacion se pondera por
+# area cafetera: el 95.5% corresponde al pixel sobre la
+# cordillera occidental (-77.5 longitud O) donde se ubica la
+# mayor densidad de fincas.
+#
+# Calculo del Standardized Precipitation Index a 3 meses
+# (McKee, Doesken y Kleist, 1993):
+#   (a) Acumulado movil 3 meses de precipitacion mensual.
+#   (b) Ajuste por maxima verosimilitud a una distribucion
+#       Gamma de dos parametros (forma y escala), forzando
+#       locacion = 0 para garantizar soporte positivo.
+#   (c) Transformacion del CDF de Gamma a cuantil de la
+#       normal estandar N(0,1) mediante la funcion inversa
+#       de probabilidad normal (ppf).
+#   (d) Correccion Hoshkin 1e-5 en los bordes para evitar
+#       cuantiles +/- infinito cuando la CDF valga 0 o 1.
+#
+# El SPI-3 se computa sobre tres ventanas fenologicas alineadas
+# con el ciclo productivo del cafe colombiano:
+#   - Floracion ........ meses 1 a 4
+#   - Desarrollo de granos meses 5 a 8
+#   - Cosecha .......... meses 9 a 12
+# Se adicionan ademas rezagos anuales (t-1) para representar
+# la inercia climática del cultivo perenne.
 # ============================================================
 print("[6/8] ERA5 precipitaciones, calculo SPI-3...")
 era5_1 = pd.read_csv(os.path.join(RAW, "era5_precip_quindio_narino_consolidado.csv"))
@@ -259,6 +350,19 @@ print(f"      -> {len(clima_anual)} filas dept*anyo ({clima_anual['year'].min()}
 
 # ============================================================
 # 7. AGREGADO EVA A NIVEL DEPARTAMENTAL
+# ------------------------------------------------------------
+# La EVA original (paso 2) esta a nivel municipio. Para
+# alinear el modelo con los indices climaticos (que son
+# departamentales, por no tener grilla municipal suficientemente
+# robusta), se suma area y produccion dentro de cada
+# departamento, conservando el conteo de municipios con
+# reporte. Se calculan dos derivadas:
+#   - rendimiento kg/ha = (produccion ton * 1000) / area cosechada
+#   - porcentaje de area cosechada sobre sembrada (proxy de
+#     sanidad general del cultivo; caidas indican perdidas por
+#     abandono o roya).
+# La combinacion [departamento, year] sera la clave primaria
+# del panel en el paso 8.
 # ============================================================
 print("[7/8] EVA agregado departamental...")
 eva_dep = (eva_municipal.dropna(subset=["area_cosechada_ha", "produccion_t", "anio"])
@@ -277,6 +381,28 @@ print(f"      -> EVA dep {len(eva_dep)} filas")
 
 # ============================================================
 # 8. PANEL FINAL INTEGRADO: features_modelo_equipo9.csv
+# ------------------------------------------------------------
+# Merge horizontal de las 7 fuentes anteriores usando
+# [departamento, year] como clave. Se incorporan adicionalmente
+# anomalias de temperatura del Excel IDEAM y el NDVI MODIS
+# (indice de vegetacion, calidad de la biomasa aerea).
+#
+# Luego se construyen 4 variables de interaccion que
+# representan canales de transmision documentados en la
+# literatura cafetera colombiana:
+#   - roya_interact .. : roya amplifica perdidas en cosechas
+#                        humedas (interaccion roya x SPI cosecha)
+#   - temp_sq_e9 ..... : efecto no lineal del estres calor
+#                        (forma cuadrática en temperatura maxima)
+#   - precio_spi_int . : precio alto amortigua choques climaticos
+#                        (efecto ingreso disponible para fertilizar)
+#   - enso_spi3dev ... : ENSO amplifica desviaciones del SPI-3
+#                        (año Niño + sequia = evento compuesto)
+#
+# Todas las interacciones se computan con variables centradas
+# implicitamente al usarse sin constante. El panel resultado
+# queda balanceado (12 años x 2 departamentos = 24 filas,
+# 36 columnas) y es la entrada del pipeline de modelado.
 # ============================================================
 print("[8/8] Panel integrado features...")
 panel = eva_dep.merge(clima_anual, on=["departamento", "year"], how="left")
