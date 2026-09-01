@@ -1,4 +1,4 @@
-# Documento Completo Reporte Interno - Equipo 9
+﻿# Documento Completo Reporte Interno - Equipo 9
 **Fase 2 - Seguro Agricola Indexado Cafetero - MIAD 2026 Uniandes**
 
 Su uso es exclusivamente interno para los 4 miembros del equipo antes de la sustentacion.
@@ -128,7 +128,7 @@ El Track A responde a la pregunta: **"funciona el SPI-3 como indicador de crisis
 El Track B responde a la pregunta: **"podemos predecir el rendimiento kg/ha a partir del SPI-3 y otras variables?"** Se entrenan 4 enfoques distintos, como si se le pidiera la opinion a 4 expertos diferentes y se escogiera la mas fiable. El holdout (conjunto de prueba) son las ultimas 6 filas: anos 2017-2018, NUNCA vistos durante el entrenamiento ni la seleccion de hiperparametros.
 
 - **RidgeCV (seleccionado para Narino):** modelo lineal que le pone "freno" (penalizacion L2) a los coeficientes para no creerle demasiado a ninguna variable sola. Es el equivalente a un evaluador estricto que no se deslumbra por un solo indicador aislado. Funciona especialmente bien cuando las variables predictoras estan correlacionadas entre si (como pasa aqui). Su RMSE en holdout Narino: 15.1 kg/ha, el mejor de todos los modelos.
-- **LassoCV (referencia):** tambien lineal, pero en lugar de frenar coeficientes, directamente pone en cero las variables que considera irrelevantes. Es el "seleccionador agresivo". En un panel tan corto (solo 24 filas) se comporta de forma inestable. Se mantiene solo como referencia comparativa.
+- **LassoCV:** tambien lineal, pero en lugar de frenar coeficientes, directamente pone en cero las variables que considera irrelevantes. Es el "seleccionador agresivo". En un panel tan corto (solo 24 filas) se comporta de forma inestable. Se mantiene solo como diagnostico de seleccion de variables.
 - **Random Forest (competencia):** construye 300 arboles pequenos que deciden en conjunto. Cada arbol ve un subconjunto distinto de filas y variables. Es el "jurado popular": captura bien relaciones no lineales, como por ejemplo que una sequia empeora mucho mas si ademas hay roya.
 - **ExtraTrees Regressor (seleccionado para Quindio):** pariente cercano de Random Forest pero aun mas aleatorio en la forma en que corta cada arbol. Menos varianza, menor riesgo de sobreajuste. Es el "jurado con variacion deliberada". Su RMSE en holdout Quindio: 45.7 kg/ha, el mejor para ese departamento.
 
@@ -234,7 +234,7 @@ Carpeta raiz del proyecto
 
 | Archivo | Tipo | Explicacion |
 |---|---|---|
-| README.md | Markdown | Descripcion publica del repo: contexto, fuentes, diseno, KPIs, cumplimiento N1-N4/D1-D4, equipo y referencias. |
+| README.md | Markdown | Descripcion publica del repo: contexto, fuentes, diseno, KPIs, cumplimiento N1-N4/D1-D4, equipo y fuente bibliograficas. |
 | ejecutar_pipeline_equipo9.cmd | Script .cmd Windows | Flujo one-click de ejecucion completa. Explicado en 3.5. |
 | etl_equipo9.py | Codigo Python | **ETL 8 pasos comentados**: ONI, EVA, Precios, Roya, Temperaturas, ERA5+SPI-3 McKee, Panel interacciones, resumen. SEED=2026. |
 | pipeline_equipo9.py | Codigo Python | **Pipeline modelado 6 bloques comentados**: Track A, Track B (4 modelos + LOYO), Supuestos S1-S5, HE actuarial, Tabla requerimientos, 6 PNG. |
@@ -320,7 +320,7 @@ Carpeta hermana separada del repo GitHub, pensada EXCLUSIVAMENTE para exportar l
 
 | Archivo | Uso practico |
 |---|---|
-| 01_REPORTE_EXTERNO_ENTREGA_FASE2_Equipo9.md | ~95% de la nota Fase 2. Estructura 10 secciones: Resumen, Fuentes/ETL, Diseno, Supuestos, Entrenamiento, Resultados, Pendientes, Conclusiones, Referencias, Anexos A-J. Incrusta 6 PNGs via NO-REPLACE*.png. Exportar a PDF con Markdown PDF de VSCode o Pandoc para que las imagenes se graben en el binario. |
+| 01_REPORTE_EXTERNO_ENTREGA_FASE2_Equipo9.md | ~95% de la nota Fase 2. Estructura 10 secciones: Resumen, Fuentes/ETL, Diseno, Supuestos, Entrenamiento, Resultados, Pendientes, Conclusiones, Referencias, Anexos A-J. Incrusta 6 PNGs via rutas relativas al repo. Exportar a PDF con Markdown PDF de VSCode o Pandoc para que las imagenes se graben en el binario. |
 | 00_REPORTE_INTERNO_EQUIPO9.md | Lectura de apoyo para los 4 miembros antes de sustentacion. Contiene: estado de entrega, estructura 2 carpetas, cumplimiento N1-N4/D1-D4/S1-S5, guia conceptual completa en lenguaje claro, tabla final KPIs listos para exponer, inventario tecnico completo y explicacion del flujo por lotes. |
 
 ---
@@ -382,3 +382,4 @@ Los dos archivos .py del proyecto tienen comentarios internos teoricos por secci
 ---
 
 *Fin del documento interno del Equipo 9 - Version ejecucion final, 01 septiembre 2026.*
+
