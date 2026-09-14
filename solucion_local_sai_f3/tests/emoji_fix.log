@@ -1,0 +1,15 @@
+FIXED 6 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md
+FIXED 1 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\run_dashboard.ps1
+FIXED 4 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\setup_dev.ps1
+FIXED 17 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py
+FIXED 13 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md
+FIXED 13 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py
+FIXED 5 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\2_Track_B_Prediccion_Rendimiento.py
+FIXED 9 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py
+FIXED 9 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py
+FIXED 152 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests\emoji_findings.json
+FIXED 152 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests\emoji_scan.txt
+FIXED 1 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests\_fix_emojis.py
+FIXED 1 lines -> C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests\_scan_emojis.py
+
+DONE files_changed=13 total_line_changes=383

@@ -1,0 +1,3 @@
+PKG START
+PKG imported version=0.1.0
+PKG FEATURES=['spi3_floracion', 'spi3_desarrollo', 'spi3_cosecha', 'tmax_mean_e9', 'oni_mean', 'roya_dummy']

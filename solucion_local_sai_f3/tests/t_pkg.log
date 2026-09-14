@@ -1,0 +1,7 @@
+﻿EXIT=1
+STDOUT:
+STDERR:  File "c:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests\t_pkg.py", line 20
+    k = kp[]
+           ^
+SyntaxError: invalid syntax
+

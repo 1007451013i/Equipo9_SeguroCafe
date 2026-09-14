@@ -1,0 +1,12 @@
+ID,Tipo,Nombre,Criterio,Resultado,Estado
+N1,NoFuncional,ValidacionHistorica,2012+2015 ambos deptos detectados,4/4 eventos,OK
+N2,NoFuncional,PoderPredictivoSPI,R2 >= 0.70 insample,Quindio 0.637 / Narino 0.639,Parcial
+N3,NoFuncional,FrecuenciaActivacion,15-25% meses (Equipo 9 P10/P90),Narino 24.0% + Quindio 24.0%,Parcial
+N4,NoFuncional,UmbralesDiferenciados,P10/P90 calibrados por depto,"Sequias [-1.707, -2.214]",OK
+D1,Datos/Modelo,RMSE_holdout,<= 186 kg/ha (Quindio+Narino),"Narino 15, Quindio 46",Parcial
+D2,Datos/Modelo,CoherenciaSHAPtop3,SPI-3/ONI en top-3 climatico,Confirmado ambos deptos,OK
+D3,Datos/Modelo,EstabilidadTemporal,DeltaR2 < 0.15 entre folds LOYO,Ruptura roya 2012-2014 presente (Ajuste en progreso),NoCumple
+D4,Datos/Modelo,RBIM_vs_Estadistico,"DeltaR2 <= 0.10, ratio RMSE <= 1.2","RBIM auditable, DeltaR2 ~ 0.09 vs Ridge",Parcial
+F2,Funcional,CalculoSPI3automatico,Pipeline reproducible SEED=2026,Ejecutable: etl_equipo9.py -> pipeline_equipo9.py,OK
+F5,Funcional,ReporteKPIsCSV,KPIs + umbrales + predicciones + SHAP,11 CSVs listos en notebooks/outputs/,OK
+F6,Funcional,TablaRequerimientos,Rastreada N/D/F por requerimiento,Exportada tabla_cumplimiento_requerimientos_equipo9.csv,OK

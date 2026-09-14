@@ -1,0 +1,35 @@
+M0 start
+M1 models_dir exists=True path=c:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\models_artifacts
+M2 now import loader
+M3 loader imported, elapsed=1.544
+M3B loader attrs: ['Any', 'Departamento', 'Path', 'annotations', 'get_models_dir', 'joblib', 'load_models', 'load_reference_csv', 'os', 'pd', 'set_models_dir', 'threading']
+M4 call set_models_dir
+M5 get_models_dir=C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\models_artifacts
+M6 call load_reference_csv umbrales
+M7 umbrales shape=(2, 6) elapsed=0.046
+M8 call load_reference_csv kpis
+M9 kpis shape=(12, 5) elapsed=0.02
+M10 call load_reference_csv panel
+M11 panel shape=(40, 48) elapsed=0.021
+M12 call load_models
+M13 load_models done keys=['Narino', 'Quindio'] elapsed=3.208
+M14 now predict direct Narino 2007
+M15 direct pred Narino 2007=1150.273445185 elapsed=0.112
+M16 now predict via track_b_rendimiento.predict_rendimiento (la inferencia UNICA)
+M17 func pred status=success val=1150.273445185 elapsed=0.112
+M18 diff vs golden=4.96811480843462e-10
+M19 Quindio 2015
+M20 Qui status=success val=1124.381196279 diff=4.652065399568528e-10 elapsed=0.125
+M21 call kpis.get_kpis_actuariales
+M22 KPI Nar RMSE=15.1 HE=0.05 Prima=6.36 elapsed=0.029
+M23 SPI tests
+M24 SPI NAR-2.0=True NRoya=True Q-1.0=False Q-2.3=True regla_a1=C2_spi_min_e9<=P10 elapsed=0.03
+M25 Panel tests
+M26 shapes panel=(24, 48) loyo=(160, 5) valhist=(4, 7) elapsed=0.038
+M27 Raise validation tests
+M27A OK Bogota raise: ValueError
+M27B OK falta campo raise: ValueError
+M27C OK roya_malo raise: ValueError
+M27D warnings count=2 first_w=Se ignoran campos adicionales no usados por el modelo oficia
+ALL M TESTS PASSED SECTION M0-M27D ELAPSED_TOTAL=1789363810.489
+ALL_PACKAGE_OK

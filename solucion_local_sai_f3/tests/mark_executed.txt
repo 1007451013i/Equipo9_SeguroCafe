@@ -1,0 +1,4 @@
+EXECUTED 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+CWD: C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests
+IMPORT OK version=0.1.0
+FEATURES=['spi3_floracion', 'spi3_desarrollo', 'spi3_cosecha', 'tmax_mean_e9', 'oni_mean', 'roya_dummy']

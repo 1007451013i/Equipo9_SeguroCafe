@@ -1,0 +1,9 @@
+departamento,modelo,features_sel,R2_loyo,RMSE_loyo,MAE_loyo,R2_ho,RMSE_ho,MAE_ho,Cumple_D1_RMSE186
+Narino,RidgeCV_AlphaLog,8,0.023,113.3,89.6,-0.581,15.1,9.0,SI
+Narino,LassoCV_5fold,8,-0.266,128.9,106.2,-421.282,246.6,236.1,-
+Narino,RandomForest_Eq9,8,-0.541,142.3,115.8,-5.643,30.9,30.8,SI
+Narino,ExtraTrees_Eq9,8,0.058,111.2,89.2,-3.555,25.6,25.4,SI
+Quindio,RidgeCV_AlphaLog,8,0.551,70.1,58.2,-30.244,57.1,34.7,SI
+Quindio,LassoCV_5fold,8,0.283,88.5,70.2,-23.45,50.5,46.0,SI
+Quindio,RandomForest_Eq9,8,0.452,77.4,63.3,-38.354,64.0,60.1,SI
+Quindio,ExtraTrees_Eq9,8,0.555,69.8,54.5,-19.054,45.7,35.8,SI

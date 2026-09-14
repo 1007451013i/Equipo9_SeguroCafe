@@ -1,0 +1,297 @@
+﻿=== /api/v1/series/historico ===
+DICT/OBJ KEYS: columns, rows, shape
+OBJ JSON 3k: {
+    "rows":  [
+                 {
+                     "departamento":  "Narino",
+                     "year":  2007,
+                     "rendimiento_kg_ha":  1298.9492620303365,
+                     "anom_temp_mean_e9":  -0.6879074128955374,
+                     "area_cosechada_ha":  24459.0,
+                     "area_sembrada_ha":  28332.0,
+                     "enso_spi3dev":  -0.0205133381870539,
+                     "evi_max":  0.3989227852279099,
+                     "evi_mean":  0.3176235878402967,
+                     "evi_min":  0.250882024715256,
+                     "n_exceso_e9":  0,
+                     "n_exceso_e9_lag1":  0.0,
+                     "n_municipios":  37,
+                     "n_sequia_e9":  1,
+                     "n_sequia_e9_lag1":  1.0,
+                     "ndvi_max":  0.5880312931687999,
+                     "ndvi_mean":  0.4708708032891412,
+                     "ndvi_min":  0.3813457203568814,
+                     "oni_max":  0.66,
+                     "oni_mean":  -0.6075,
+                     "oni_mean_lag1":  0.0716666666666666,
+                     "oni_min":  -1.6,
+                     "pct_area_cosechada":  0.8632994493858535,
+                     "precio_cop_carga":  418925.22,
+                     "precio_lag1":  592555.32,
+                     "precio_lag2":  489962.82,
+                     "precio_spi_int":  -63414.58648035308,
+                     "produccion_t":  31771.0,
+                     "roya_dummy":  0,
+                     "roya_interact":  0.0,
+                     "roya_shock":  0.0,
+                     "spi3_cosecha":  -0.107018845903456,
+                     "spi3_cosecha_lag1":  -0.0601051986357601,
+                     "spi3_desarrollo":  -0.3609924665595361,
+                     "spi3_desarrollo_lag1":  -0.8385866049863143,
+                     "spi3_floracion":  -0.1963123140622514,
+                     "spi3_floracion_lag1":  0.0399939260244654,
+                     "spi3_max":  0.6399159905059914,
+                     "spi3_mean":  -0.2214412088417479,
+                     "spi3_mean_lag1":  -0.2862326258658696,
+                     "spi3_median":  -0.2549124814381823,
+                     "spi3_median_lag1":  -0.180142258772103,
+                     "spi3_min":  -1.0259086048726842,
+                     "spi3_min_lag1":  -1.0100382312875251,
+                     "spi3_std":  0.4959449252805494,
+                     "temp_sq_e9":  400.0,
+                     "tmax_mean_e9":  20.0,
+                     "tmedia_mean_e9":  12.06
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2008,
+                     "rendimiento_kg_ha":  1222.1006136887777,
+                     "anom_temp_mean_e9":  -0.5873965572122728,
+                     "area_cosechada_ha":  25583.0,
+                     "area_sembrada_ha":  30220.0,
+                     "enso_spi3dev":  0.1345255343713618,
+                     "evi_max":  0.3989227852279099,
+                     "evi_mean":  0.3176235878402967,
+                     "evi_min":  0.250882024715256,
+                     "n_ex
+=== /api/v1/series/pred-vs-real ===
+DICT/OBJ KEYS: columns, rows, shape
+OBJ JSON 3k: {
+    "rows":  [
+                 {
+                     "departamento":  "Narino",
+                     "year":  2007,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1298.9,
+                     "y_pred_loyo_kg_ha":  1061.8
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2007,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1298.9,
+                     "y_pred_loyo_kg_ha":  1063.3
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2008,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1222.1,
+                     "y_pred_loyo_kg_ha":  1051.0
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2008,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1222.1,
+                     "y_pred_loyo_kg_ha":  1051.2
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2009,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1038.7,
+                     "y_pred_loyo_kg_ha":  1068.3
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2009,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1038.7,
+                     "y_pred_loyo_kg_ha":  1068.3
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2010,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1046.4,
+                     "y_pred_loyo_kg_ha":  1067.6
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2010,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1046.4,
+                     "y_pred_loyo_kg_ha":  1067.7
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2011,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  992.2,
+                     "y_pred_loyo_kg_ha":  1073.8
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2011,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  992.2,
+                     "y_pred_loyo_kg_ha":  1073.8
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2012,
+                     "modelo":  "RidgeCV_AlphaLog",
+                     "y_real_kg_ha":  1009.8,
+                     "y_pred_loyo_kg_ha":  1067.2
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "year":  2013,
+                   
+=== /api/v1/track-a/umbrales ===
+DICT/OBJ KEYS: package_version, umbrales_por_departamento
+OBJ JSON 3k: {
+    "package_version":  "0.1.0",
+    "umbrales_por_departamento":  {
+                                      "Narino":  {
+                                                     "umbral_sequia_p10":  -1.7071,
+                                                     "umbral_exceso_p90":  0.194,
+                                                     "pct_meses_sequia":  12.0,
+                                                     "pct_meses_exceso":  12.0,
+                                                     "pct_total_activacion":  24.0,
+                                                     "sequia_p10":  -1.7071,
+                                                     "p10":  -1.7071,
+                                                     "exceso_p90":  0.194,
+                                                     "p90":  0.194,
+                                                     "pct_activacion_ann":  24.0,
+                                                     "frecuencia_pct":  24.0
+                                                 },
+                                      "Quindio":  {
+                                                      "umbral_sequia_p10":  -2.2143,
+                                                      "umbral_exceso_p90":  -0.1328,
+                                                      "pct_meses_sequia":  12.0,
+                                                      "pct_meses_exceso":  12.0,
+                                                      "pct_total_activacion":  24.0,
+                                                      "sequia_p10":  -2.2143,
+                                                      "p10":  -2.2143,
+                                                      "exceso_p90":  -0.1328,
+                                                      "p90":  -0.1328,
+                                                      "pct_activacion_ann":  24.0,
+                                                      "frecuencia_pct":  24.0
+                                                  }
+                                  }
+}
+=== /api/v1/validacion-historica ===
+DICT/OBJ KEYS: columns, rows, shape
+OBJ JSON 3k: {
+    "rows":  [
+                 {
+                     "departamento":  "Narino",
+                     "anio":  2012,
+                     "evento":  "Roya 2012",
+                     "spi3_min_e9":  -1.415,
+                     "meses_sequia":  3,
+                     "meses_exceso":  0,
+                     "seguro_activo":  "SI"
+                 },
+                 {
+                     "departamento":  "Narino",
+                     "anio":  2015,
+                     "evento":  "El Nino 2015",
+                     "spi3_min_e9":  -1.566,
+                     "meses_sequia":  3,
+                     "meses_exceso":  0,
+                     "seguro_activo":  "SI"
+                 },
+                 {
+                     "departamento":  "Quindio",
+                     "anio":  2012,
+                     "evento":  "Roya 2012",
+                     "spi3_min_e9":  -1.364,
+                     "meses_sequia":  3,
+                     "meses_exceso":  0,
+                     "seguro_activo":  "SI"
+                 },
+                 {
+                     "departamento":  "Quindio",
+                     "anio":  2015,
+                     "evento":  "El Nino 2015",
+                     "spi3_min_e9":  -1.89,
+                     "meses_sequia":  6,
+                     "meses_exceso":  0,
+                     "seguro_activo":  "SI"
+                 }
+             ],
+    "columns":  [
+                    "departamento",
+                    "anio",
+                    "evento",
+                    "spi3_min_e9",
+                    "meses_sequia",
+                    "meses_exceso",
+                    "seguro_activo"
+                ],
+    "shape":  [
+                  4,
+                  7
+              ]
+}
+=== /api/v1/kpis ===
+DICT/OBJ KEYS: actuariales_por_depto, disponible_cols, track_a_por_depto, track_b_por_depto
+OBJ JSON 3k: {
+    "track_b_por_depto":  {
+                              "Narino":  {
+                                             "_rows":  [
+                                                           {
+                                                               "departamento":  "Narino",
+                                                               "track":  "B_D1",
+                                                               "kpi":  "RMSE_holdout_best",
+                                                               "valor":  15.1,
+                                                               "modelo":  "RidgeCV_AlphaLog"
+                                                           },
+                                                           {
+                                                               "departamento":  "Narino",
+                                                               "track":  "HE",
+                                                               "kpi":  "HE_varianza",
+                                                               "valor":  0.05,
+                                                               "modelo":  "indice_SPI3"
+                                                           },
+                                                           {
+                                                               "departamento":  "Narino",
+                                                               "track":  "HE",
+                                                               "kpi":  "Riesgo_base",
+                                                               "valor":  47.36,
+                                                               "modelo":  "indice_SPI3"
+                                                           },
+                                                           {
+                                                               "departamento":  "Narino",
+                                                               "track":  "HE",
+                                                               "kpi":  "Prima_act",
+                                                               "valor":  6.36,
+                                                               "modelo":  "indice_SPI3"
+                                                           },
+                                                           {
+                                                               "departamento":  "Narino",
+                                                               "track":  "A_N2",
+                                                               "kpi":  "R2_SPI_inSample",
+                                                               "valor":  0.639,
+                                                               "modelo":  "Ols"
+                                                           },
+                                                           {
+                                                               "departamento":  "Narino",
+                                                               "track":  "A_N3",
+                                                            
+=== /health ===
+DICT/OBJ KEYS: models_available, models_dir, package_name, package_version, status, timestamp
+OBJ JSON 3k: {
+    "status":  "ok",
+    "package_version":  "0.1.0",
+    "package_name":  "cafe-sai-modelos-equipo9",
+    "models_available":  [
+                             "Narino",
+                             "Quindio"
+                         ],
+    "models_dir":  "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\models_artifacts",
+    "timestamp":  "2026-09-14T07:57:33.709294+00:00"
+}
