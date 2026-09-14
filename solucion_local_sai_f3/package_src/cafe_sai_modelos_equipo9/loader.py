@@ -1,8 +1,10 @@
 """
-Loader for models_artifacts directory.
+Loader for models_artifacts directory (RUNTIME PORTABLE).
 
-Rule: models_artifacts NEVER ship inside .whl (they are deployed alongside via
-MODELS_DIR env var or explicit set_models_dir() call).
+Rule: models_artifacts NEVER ship inside .whl. All runtime paths resolve
+EXCLUSIVELY within the portable root folder (solucion_local_sai_f3). No path
+leaks outside this folder. No absolute paths hardcoded. No dependencies on
+any external sibling folders (Trabajo de Grado, Informe Mejorado, etc.).
 """
 
 from __future__ import annotations
@@ -44,23 +46,64 @@ def set_models_dir(path: str | os.PathLike[str]) -> None:
         _MODELS_DIR = p
 
 
+def _find_upwards_dir_with(target_name: str, start: Path, max_levels: int = 12) -> Path | None:
+    """
+    Portable path discovery: walk up from `start` parent by parent, until a dir
+    containing a child named `target_name` is found. Works REGARDLESS of how
+    many nesting levels exist above solucion_local_sai_f3 (0, 1, 3, 10 ...).
+    Never leaks outside the volume's root. Stops at max_levels as safety.
+    """
+    current = start.resolve()
+    for _ in range(max_levels):
+        candidate = current / target_name
+        if candidate.is_dir():
+            return candidate
+        if current.parent == current:  # filesystem root reached
+            return None
+        current = current.parent
+    return None
+
+
 def _infer_default_models_dir() -> Path:
-    package_root = Path(__file__).resolve().parent.parent.parent
-    candidate = package_root / "models_artifacts"
-    if candidate.is_dir():
-        return candidate
+    """
+    3-strategy fallback (100% portable, no nesting assumptions):
+      1) ENV CAFE_SAI_MODELS_DIR (highest priority, user override).
+      2) Walk UPWARDS from loader.py location until we find a folder that
+         CONTAINS a child named "models_artifacts". Works whether
+         solucion_local_sai_f3 lives directly at the project root or nested
+         1-12 levels deep (e.g. cloned repo structure).
+      3) Current Working Directory / "models_artifacts".
+    """
+    # 1) ENV override (explicit wins)
     env = os.environ.get("CAFE_SAI_MODELS_DIR")
     if env:
-        p = Path(env).resolve()
-        if p.is_dir():
-            return p
+        p_env = Path(env).resolve()
+        if p_env.is_dir():
+            return p_env
+
+    # 2) Portable discovery relative to THIS loader file.
+    #    Escenario A: <SOLUTION_ROOT>/package_src/cafe_sai_modelos_equipo9/loader.py
+    #                  -> parent of package_src is SOLUTION_ROOT, contains models_artifacts
+    #    Escenario B: SOLUTION_ROOT is loader.py.parents[3] if Caso_01/solucion_local/..
+    #    Escenario C: SOLUTION_ROOT is parents[0] of package_src (raiz sin carpeta padre)
+    #    Walk up is agnostic to all 3 (and more).
+    here = Path(__file__).resolve()
+    found_from_here = _find_upwards_dir_with("models_artifacts", start=here)
+    if found_from_here is not None:
+        return found_from_here
+
+    # 3) CWD fallback.
     cwd_candidate = Path.cwd() / "models_artifacts"
     if cwd_candidate.is_dir():
         return cwd_candidate
+
     raise FileNotFoundError(
-        "No se encontró models_artifacts. Setea CAFE_SAI_MODELS_DIR o llama"
-        f" a set_models_dir(ruta). Buscados: {candidate}, CWD/models_artifacts,"
-        " env CAFE_SAI_MODELS_DIR."
+        "No se encontro models_artifacts. Define CAFE_SAI_MODELS_DIR o llama"
+        " a set_models_dir(ruta). Fallbacks probados: env CAFE_SAI_MODELS_DIR,"
+        " busqueda ascendente desde loader.py (max 12 niveles),"
+        f" CWD/models_artifacts={cwd_candidate}. Los 2 archivos .joblib y los"
+        " CSV de referencia deben estar en models_artifacts/ dentro de la"
+        " carpeta solucion_local_sai_f3."
     )
 
 

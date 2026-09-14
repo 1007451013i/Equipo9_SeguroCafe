@@ -6,10 +6,12 @@
 
 param(
     [int]$Port = 8000,
-    [string]$Host = "127.0.0.1",
+    [string]$ApiHost = "127.0.0.1",
     [switch]$NoReload
 )
 
+# Portable: resuelve la raiz del proyecto a partir de la ubicacion ESTE
+# script, sin depender de donde el usuario haga cd, ni de rutas externas.
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $ProjectRoot
 $env:CAFE_SAI_MODELS_DIR = Join-Path $ProjectRoot "models_artifacts"
@@ -34,10 +36,11 @@ if ($env:VIRTUAL_ENV) {
     }
 }
 
-$params = @("api.main:app","--host",$Host,"--port","$Port")
+$params = @("api.main:app","--host",$ApiHost,"--port","$Port")
 if (-not $NoReload) { $params += @("--reload","--reload-dir",(Join-Path $ProjectRoot "api"),"--reload-dir",(Join-Path $ProjectRoot "package_src")) }
 
-Write-Host "▶️  API en http://${Host}:${Port}   (docs: http://${Host}:${Port}/docs)" -ForegroundColor DarkGreen
-Write-Host "   Python: $uvicorn" -ForegroundColor Gray
+Write-Host ("API en http://" + $ApiHost + ":" + $Port + "   (docs: http://" + $ApiHost + ":" + $Port + "/docs)") -ForegroundColor DarkGreen
+Write-Host ("   Python: " + $uvicorn) -ForegroundColor Gray
+Write-Host ("   MODELS_DIR: " + $env:CAFE_SAI_MODELS_DIR) -ForegroundColor Gray
 $cmdArgs = $argsExtra + $params
 & $uvicorn @cmdArgs

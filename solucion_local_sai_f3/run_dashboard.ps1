@@ -6,10 +6,11 @@
 
 param(
     [int]$Port = 8501,
-    [string]$Host = "127.0.0.1",
+    [string]$DashHost = "127.0.0.1",
     [string]$ApiBase = "http://127.0.0.1:8000"
 )
 
+# Portable: resuelve la raiz del proyecto a partir de la ubicacion ESTE script.
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location (Join-Path $ProjectRoot "dashboard")
 $env:SAI_API_BASE = $ApiBase
@@ -39,12 +40,12 @@ $params = @(
     "run", "app.py",
     "--server.headless","true",
     "--server.port","$Port",
-    "--server.address",$Host,
+    "--server.address",$DashHost,
     "--server.maxUploadSize","2",
     "--browser.gatherUsageStats","false"
 )
 
-Write-Host " Dashboard en http://${Host}:${Port}  (API: $ApiBase)" -ForegroundColor DarkGreen
-Write-Host "   Asegúrate de correr antes .\run_api.ps1 en otra terminal." -ForegroundColor Yellow
+Write-Host ("Dashboard en http://" + $DashHost + ":" + $Port + "  (API: " + $ApiBase + ")") -ForegroundColor DarkGreen
+Write-Host "   Antes de abrir el navegador, ejecuta .\run_api.ps1 en otra terminal." -ForegroundColor Yellow
 $cmdArgs = $argsExtra + $params
 & $st @cmdArgs

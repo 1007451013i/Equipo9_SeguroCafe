@@ -1,5 +1,6 @@
-# Dependencias completas (package + API + dashboard + dev)
-# Versiones base alineadas con requirements.txt oficial de GitHub_Equipo9
+# Dependencias completas - Solucion Local Autonoma SAI Cafetero
+# Incluye: capa de inferencia + API + Dashboard + herramientas build/dev.
+# No requiere ninguna fuente externa para la ejecucion en runtime.
 
 # --- Versiones de runtime oficiales (no tocar) ---
 numpy==1.26.4

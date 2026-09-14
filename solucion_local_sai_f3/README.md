@@ -1,152 +1,88 @@
-# Seguro Agricola Indexado Cafetero - Solucion local v0.1.0
+# Solucion Local Autonoma SAI Cafetero - v0.1.0
 
-Carpeta 100 por ciento independiente (hermana de `Trabajo de Grado/` e `Informe Mejorado/`).
-**No modifica ningun archivo** de las carpetas de referencia. La regla principal del proyecto
-es estricta: **NO MODIFICAR LOS MODELOS** (no reentrenar, no cambiar hiperparametros, no cambiar features,
-no recalibrar, etc.). Este proyecto unicamente:
+**Carpeta 100 por ciento AUTONOMA y PORTABLE.**
 
-1. Reproduce el entrenamiento oficial exacto (mismo seed=42, mismos hp, mismas features,
-   mismo CSV) y **serializa** a `.joblib` (2 modelos + metadata + predicciones golden).
-2. Empaqueta la logica de inferencia en un paquete Python distribuible (`.whl`).
-3. Expone una API REST (FastAPI, 127.0.0.1:8000).
-4. Construye un panel local de **UNA SOLA PAGINA** (Streamlit, 127.0.0.1:8501) consumiendo 100 por ciento la API.
-5. Incluye tests pytest y scripts `.ps1` listos para Windows.
+Esta carpeta contiene TODO lo necesario para ejecutar la API local de modelos.
+**No requiere** ninguna otra carpeta del proyecto (Trabajo de Grado, Informe Mejorado, notebooks, datos externos, etc.).
+Los modelos oficiales ya estan serializados en `models_artifacts/`. No es necesario ejecutar ningun script de entrenamiento, serializacion, ETL ni reconstruccion.
 
----
+**Regla inquebrantable del proyecto:** NO MODIFICAR LOS MODELOS (no reentrenar, no cambiar hiperparametros, no cambiar features, no cambiar semilla, no cambiar datasets).
 
-## Estructura REAL (actualizada)
-
-```
-solucion_local_sai_f3/
-|-- api/
-|   |-- main.py                     # FastAPI - 13 endpoints (health, models, predict, SPI, KPIs, series)
-|   `-- schemas_api.py              # Pydantic v2 schemas
-|
-|-- dashboard/
-|   `-- app.py                      # UNA SOLA PAGINA (6 modulos + sidebar filtros, NO carpeta pages/)
-|
-|-- models_artifacts/               # Solo lectura, NO dentro del wheel
-|   |-- narino_extratrees_entrega2.joblib
-|   |-- quindio_randomforest_entrega2.joblib
-|   |-- metadata_entrega2.json
-|   |-- features_panel_entrenamiento.csv    # shape (24, 48)
-|   |-- umbrales_departamento.csv
-|   |-- kpis_resumen.csv
-|   |-- pred_vs_real_loyo.csv
-|   `-- validacion_historica_n1.csv         # 2 eventos x 2 deptos
-|
-|-- package_src/
-|   `-- cafe_sai_modelos_equipo9/           # UNICA fuente de logica de prediccion
-|       |-- __init__.py             # exports publicos
-|       |-- _version.py             # __version__ = "0.1.0"
-|       |-- schemas.py              # FEATURES_FENOLOGICAS, TARGET, PAGO_EVENTO_COP_HA
-|       |-- loader.py               # set_models_dir, load_models, load_reference_csv
-|       |-- track_b_rendimiento.py  # predict_rendimiento()
-|       |-- track_a_spi.py          # predict_activacion_spi() - 5 reglas OR
-|       |-- kpis.py                 # get_kpis_actuariales / track_a / track_b
-|       |-- panel.py                # panel 24x48, loyo, validacion historica
-|       `-- _build/00_serializar_modelos_oficiales.py
-|
-|-- tests/                          # Sandbox desarrollador, no distribuir
-|
-|-- dist/
-|   `-- cafe_sai_modelos_equipo9-0.1.0-py3-none-any.whl    # Wheel distribuible
-|
-|-- pyproject.toml                  # PEP 621 hatchling (excluye _build del wheel)
-|-- requirements.txt                # Dependencias completas (runtime + API + dashboard + build + test)
-|-- README_PACKAGE.md
-|
-|-- setup_dev.ps1                   # Setup ALL-IN-ONE (venv + requirements + wheel + tests)
-|-- build_package.ps1               # Solo build wheel
-|-- run_api.ps1                     # Levantar API FastAPI :8000
-`-- run_dashboard.ps1               # Levantar Dashboard Streamlit :8501
-```
+Contenido:
+1. Paquete de inferencia en `package_src/` y `.whl` distribuible en `dist/`.
+2. API REST local (FastAPI, puerto 8000).
+3. Panel ejecutivo de UNA SOLA PAGINA (Streamlit, puerto 8501).
+4. Scripts `.ps1` para Windows 10/11.
+5. 2 modelos oficiales serializados + 6 artefactos CSV/JSON de referencia dentro de `models_artifacts/`.
 
 ---
 
-## Modelos oficiales (NO modificados)
+## 1. Requisito previo
 
-| Departamento | Modelo                | n_estimators | max_depth | max_features | min_samples_leaf |
-|--------------|-----------------------|--------------|-----------|--------------|------------------|
-| Narino       | ExtraTreesRegressor   | 400          | 3         | 0.6          | 2                |
-| Quindio      | RandomForestRegressor | 400          | 2         | 1.0          | 1                |
+Unicamente necesitas **Python 3.11 estandar** (instalado desde Microsoft Store o python.org), con el launcher `py.exe` en el PATH. No requiere acceso a internet una vez que las dependencias esten instaladas.
 
-- seed modelos (`random_state`) = **42**.
-- features exactas (orden **DEBE** respetarse):
-  `["spi3_floracion", "spi3_desarrollo", "spi3_cosecha", "tmax_mean_e9", "oni_mean", "roya_dummy"]`
-- target: `rendimiento_kg_ha`.
-- **No se usa StandardScaler.**
-- Pago por evento por defecto: **1.200.000 COP/ha** (ajustable en calculadora).
-
-### Valores golden verificados
-
-| Caso            | Prediccion golden package  | diff vs notebook Entrega_2 |
-|-----------------|----------------------------|----------------------------|
-| Narino 2007     | 1150.273445185 kg/ha       | < 1e-9                     |
-| Quindio 2015    | 1124.381196279 kg/ha       | < 1e-9                     |
-| Narino 2012     | 974.183513203  kg/ha       | < 1e-9                     |
-
-### KPIs y umbrales oficiales
-
-| Depto  | P10 SPI  | P90 SPI   | Act.  | RMSE HO | HE   | Prima  | Riesgo Base |
-|--------|----------|-----------|-------|---------|------|--------|-------------|
-| Narino | -1.7071  | +0.1940   | 24 %  | 15.1    | 0.05 | 6.36 % | 47.36 %     |
-| Quindio| -2.2143  | -0.1328   | 24 %  | 45.7    | 0.11 | 10.15% | 46.71 %     |
+Sistema operativo probado: Windows 10 / Windows 11 (PowerShell 5.1 o superior).
 
 ---
 
-## 1. Requisitos previos
-
-Solo necesitas **Python 3.11 estandar** (Microsoft Store o python.org). El python portable
-en `../Trabajo de Grado/python_portable/` sirve para inspeccion pero **no trae `venv`** ni instala plotly correctamente.
-
----
-
-## 2. Instalacion rapida
+## 2. Instalacion (5 pasos MINIMOS)
 
 ```powershell
-# 1. Entra en la carpeta
+# Paso 1. Copia/clona esta carpeta EN CUALQUIER UBICACION. Entra dentro:
 cd solucion_local_sai_f3
 
-# 2. Crea y activa entorno virtual
-python -m venv .venv
+# Paso 2. Crea entorno virtual dentro de la carpeta:
+py.exe -3.11 -m venv .venv
+
+# Paso 3. Activa el entorno virtual (Windows):
 .venv\Scripts\Activate.ps1
 
-# 3. Actualiza pip
-python -m pip install --upgrade pip
+# Si PowerShell bloquea scripts:
+# powershell -ExecutionPolicy Bypass -Command ".venv\Scripts\Activate.ps1"
 
-# 4. Instala todas las dependencias
+# Paso 4. Actualiza pip e instala dependencias:
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 
-# 5. Instala el package de inferencia
+# Paso 5. Instala el paquete distribuible .whl (opcional pero recomendado):
 pip install dist\cafe_sai_modelos_equipo9-0.1.0-py3-none-any.whl
 ```
 
-### Setup ALL-IN-ONE (alternativa)
+Listo. No necesitas hacer nada mas.
 
-Si prefieres un unico comando que haga todo (incluyendo build del wheel y tests):
+---
+
+## 3. Ejecutar la API
+
+Abre 1 terminal de PowerShell dentro de `solucion_local_sai_f3\` y escribe:
+
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\setup_dev.ps1
+# Asegura activar .venv si no lo hiciste antes:
+.venv\Scripts\Activate.ps1
+
+# Levanta la API:
+.\run_api.ps1
+```
+
+Espera el mensaje de OK. Abre en tu navegador:
+
+- **Swagger UI (documentacion automatica de endpoints):** `http://127.0.0.1:8000/docs`
+- **Salud (comprueba que los 2 modelos se cargaron correctamente):** `http://127.0.0.1:8000/health`
+- **Modelos disponibles:** `http://127.0.0.1:8000/api/v1/models`
+- **Endpoint raiz:** `http://127.0.0.1:8000/`
+
+Parametros opcionales de `run_api.ps1`:
+```
+-Port <int>         Puerto (por defecto 8000)
+-ApiHost <string>   Host (por defecto 127.0.0.1)
+-NoReload           Desactiva auto-reload de uvicorn
 ```
 
 ---
 
-## 3. Ejecutar los servicios (2 terminales)
+## 4. Ejecutar el panel ejecutivo (dashboard)
 
-### Terminal 1 - API FastAPI
-
-```powershell
-cd solucion_local_sai_f3
-.venv\Scripts\Activate.ps1
-.\run_api.ps1
-```
-
-- URL: `http://127.0.0.1:8000`
-- Salud: `http://127.0.0.1:8000/health`
-- Swagger UI (docs automatica): `http://127.0.0.1:8000/docs`
-- Redoc: `http://127.0.0.1:8000/redoc`
-
-### Terminal 2 - Dashboard Streamlit
+Abre OTRA terminal de PowerShell (debes dejar la API corriendo).
 
 ```powershell
 cd solucion_local_sai_f3
@@ -154,36 +90,82 @@ cd solucion_local_sai_f3
 .\run_dashboard.ps1
 ```
 
-- URL: `http://127.0.0.1:8501`
+Abre en el navegador: `http://127.0.0.1:8501`
+
+Parametros opcionales de `run_dashboard.ps1`:
+```
+-Port <int>        Puerto (por defecto 8501)
+-DashHost <string> Host (por defecto 127.0.0.1)
+-ApiBase <string>  URL base de la API (por defecto http://127.0.0.1:8000)
+```
 
 ---
 
-## 4. Estructura del panel (UNA SOLA PAGINA)
+## 5. Estructura (SOLO para referencia)
 
-El dashboard replica el mockup `Mockup_Panel_Fase3.pdf`:
+No es necesario entender esto para usar la solucion. Se incluye para auditoria:
 
-- **Sidebar izquierdo** (filtros globales):
-  - Departamento (Todos / Narino / Quindio)
-  - Rango de anios (slider 2007 - 2018)
-  - Precarga historica Track B (anio + departamento)
-  - Parametros calculadora actuarial (ha, pago evento, sobrecarga)
-- **Cuerpo principal - 6 modulos**:
-  1. KPIs oficiales (6 tarjetas: RMSE, HE, Prima x 2 deptos)
-  2. Track A: Serie SPI-3 fenologico + activaciones por anio
-  3. Track B: Formulario prediccion rendimiento + semaforo riesgo BAJO/MEDIO/ALTO
-  4. Track B: LOYO Prediccion vs Real + metricas resumen
-  5. Validacion historica N=2 (2012 Roya / 2015 Nino, semaforo cumplimiento)
-  6. Calculadora actuarial (prima vs indemnizaciones, 12 anios + balance)
+```
+solucion_local_sai_f3/
+|-- api/                                (FastAPI - 13 endpoints)
+|   |-- main.py
+|   `-- schemas_api.py
+|
+|-- dashboard/                          (Streamlit - UNA SOLA PAGINA, NO pages/)
+|   `-- app.py                          (6 modulos + sidebar filtros)
+|
+|-- models_artifacts/                   (ARTEFACTOS DE RUNTIME, no tocar)
+|   |-- narino_extratrees_entrega2.joblib    (modelo oficial Narino, seed 42)
+|   |-- quindio_randomforest_entrega2.joblib (modelo oficial Quindio, seed 42)
+|   |-- metadata_entrega2.json
+|   |-- features_panel_entrenamiento.csv     (24 filas x 48 cols)
+|   |-- umbrales_departamento.csv            (P10/P90 SPI3 por depto)
+|   |-- kpis_resumen.csv                     (RMSE, HE, Prima, RiesgoBase...)
+|   |-- pred_vs_real_loyo.csv                (Leave-One-Year-Out)
+|   `-- validacion_historica_n1.csv          (4 eventos 2012/2015)
+|
+|-- package_src/
+|   `-- cafe_sai_modelos_equipo9/      (LOGICA UNICA DE INFERENCIA)
+|       |-- __init__.py
+|       |-- schemas.py / loader.py
+|       |-- track_b_rendimiento.py / track_a_spi.py
+|       |-- kpis.py / panel.py
+|       `-- _build/00_serializar_modelos_oficiales.py (herramienta BUILD, NO runtime)
+|
+|-- dist/
+|   `-- cafe_sai_modelos_equipo9-0.1.0-py3-none-any.whl
+|
+|-- requirements.txt
+|-- pyproject.toml
+|-- run_api.ps1 / run_dashboard.ps1
+|-- setup_dev.ps1 / build_package.ps1
+`-- README.md (ESTE ARCHIVO)
+```
 
 ---
 
-## 5. Portabilidad
+## 6. Modelos oficiales (NO MODIFICAR)
 
-- **Sin rutas absolutas.** El codigo de distribucion NO contiene referencias a `C:\Users\`, `OneDrive\`, `Desktop\` ni nombres de usuario especificos.
-- **Rutas dinamicas:**
-  - Python: `Path(__file__).resolve().parent...`
-  - PowerShell: `Split-Path -Parent $MyInvocation.MyCommand.Path`
-- La carpeta `tests/` contiene archivos sandbox del desarrollador con rutas locales. **NO se distribuye ni es necesaria para usar el sistema.**
+| Departamento | Modelo                | n_est | max_d | max_f | msl  | seed |
+|:------------:|:---------------------:|:-----:|:-----:|:-----:|:----:|:----:|
+| Narino       | ExtraTreesRegressor   | 400   | 3     | 0.6   | 2    | 42   |
+| Quindio      | RandomForestRegressor | 400   | 2     | 1.0   | 1    | 42   |
 
-Para el manual tecnico completo, consulte:
-`../Trabajo de Grado/Guia_Solucion_SAI_F3.md`
+- Features fijas (orden fijo): `["spi3_floracion","spi3_desarrollo","spi3_cosecha","tmax_mean_e9","oni_mean","roya_dummy"]`
+- Target: `rendimiento_kg_ha`
+- Pago por evento Track A: 1,200,000 COP/ha (ajustable en calculadora).
+
+---
+
+## 7. Resumen rapido - checklist de 1 minuto
+
+| Verificar | Comando / URL |
+|:----------|:--------------|
+| (1) En mi carpeta? | `pwd` muestra la ruta de solucion_local_sai_f3 |
+| (2) .venv existe?  | `Test-Path .venv\Scripts\python.exe` debe ser True |
+| (3) .venv activo?  | `Get-Command python | Select-Object Source` debe apuntar a `...\.venv\Scripts\python.exe` |
+| (4) Dependencias?  | `pip list \| findstr fastapi` y `...scikit-learn` deben mostrar versiones |
+| (5) Models ok?     | `Test-Path models_artifacts\narino_extratrees_entrega2.joblib` True + Quindio True |
+| (6) API ok?        | `http://127.0.0.1:8000/health` muestra "status":"ok" |
+| (7) Docs API?      | `http://127.0.0.1:8000/docs` abre Swagger UI |
+| (8) Dashboard?     | `http://127.0.0.1:8501` panel en navegador |

@@ -6,8 +6,11 @@
   (1d) build del wheel package.
 
 .DESCRIPTION
-  Sólo funciona con Python 3.11+ estándar (Microsoft Store o python.org).
-  El python portable de `../Trabajo de Grado/python_portable/` NO tiene módulo venv.
+  Solo funciona con Python 3.11+ estandar (Microsoft Store o python.org).
+  Requisitos: los modelos .joblib oficiales ya deben existir en models_artifacts/.
+  Si no existen y las fuentes originales de build estan disponibles en una
+  carpeta hermana, el serializador intentara regenerarlos. Esta carpeta es
+  100% portable y no requiere fuentes externas para RUNTIME (solo para build).
 #>
 
 param(
