@@ -1,0 +1,4 @@
+1 START
+2 IMPORTED version=0.1.0
+3 GOLDEN LOADED keys=['Narino_2007', 'Narino_2012', 'Quindio_2015']
+4 CASE LOADED depto=Narino year=2007

@@ -1,0 +1,762 @@
+[
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\README.md",
+    "line": 162,
+    "text": "1. ** Resumen ejecutivo** – 6 tarjetas KPI (RMSE, HE, Prima × 2 deptos), validación"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\README.md",
+    "line": 164,
+    "text": "2. ** Track A SPI-3** – Serie SPI-3, umbrales P10/P90, semáforo activación y tabla"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\README.md",
+    "line": 166,
+    "text": "3. ** Track B Rendimiento** – 6 inputs fenológicos, tarjeta predicción kg/ha,"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\README.md",
+    "line": 168,
+    "text": "4. ** Validación histórica** – 2012 Roya y 2015 Niño; semáforo CUMPLE/NO CUMPLE."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\README.md",
+    "line": 169,
+    "text": "5. ** Calculadora actuarial** – pago/ha, ha aseguradas, prima, sobrecarga, flujo"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\README.md",
+    "line": 244,
+    "text": "Package: `cafe-sai-modelos-equipo9==0.1.0` · Python: 3.11 · Local-only · Windows PowerShell "
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\run_dashboard.ps1",
+    "line": 47,
+    "text": "Write-Host \" Dashboard en http://${Host}:${Port}  (API: $ApiBase)\" -ForegroundColor DarkGreen"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\setup_dev.ps1",
+    "line": 44,
+    "text": "Write-Host \"    Python venv: $venvPy\" -ForegroundColor Green"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\setup_dev.ps1",
+    "line": 72,
+    "text": "    Write-Host \"    Wheel: $($wheelExistente.Name)\" -ForegroundColor Green"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\setup_dev.ps1",
+    "line": 75,
+    "text": "    Write-Host \"    Instalado.\" -ForegroundColor Green"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\setup_dev.ps1",
+    "line": 82,
+    "text": "Write-Host \"`n️  Setup dev completado.\" -ForegroundColor Green"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 32,
+    "text": "    page_icon=\"\","
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 50,
+    "text": "            \"️ API no disponible en \""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 145,
+    "text": "    st.title(\" Panel SAI Cafetero\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 152,
+    "text": "    st.page_link(\"app.py\", label=\" Resumen ejecutivo\", icon=\"\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 154,
+    "text": "        (\"1_Track_A_Indice_SPI\", \"\"),"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 155,
+    "text": "        (\"2_Track_B_Prediccion_Rendimiento\", \"\"),"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 156,
+    "text": "        (\"3_Validacion_Historica\", \"\"),"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 157,
+    "text": "        (\"4_Calculadora_Actuarial\", \"\"),"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 172,
+    "text": "st.title(\" Seguro Agrícola Indexado Cafetero — Panel Ejecutivo\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 183,
+    "text": "st.markdown(\"##  KPIs del proyecto (oficiales, NO recalculados)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 218,
+    "text": "              <div class=\"kpi-label\"> RMSE Holdout · {depto_labels.get(depto, depto)}</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 230,
+    "text": "              <div class=\"kpi-label\">️ HE Ederington · {depto_labels.get(depto, depto)}</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 242,
+    "text": "              <div class=\"kpi-label\"> Prima Actuarial · {depto_labels.get(depto, depto)}</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 251,
+    "text": "st.markdown(\"## ️ Validación histórica rápida (Track A)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 286,
+    "text": "st.markdown(\"##  Resumen por departamento (panel entrenamiento)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 289,
+    "text": "    with st.expander(f\" {depto_labels.get(depto, depto)} — 12 años · {len(FEATS_ORDER)} vars fenológicas\"):"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\app.py",
+    "line": 301,
+    "text": "    \" **Nota:** Este panel NO ejecuta los modelos directamente. \""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 31,
+    "text": "st.title(\" Track A — Índice Climático SPI-3\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 50,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\">️ Sequía P10 ({depto_labels.get(depto, depto)})</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 55,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\"> Exceso P90 ({depto_labels.get(depto, depto)})</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 60,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\"> % Activación observada</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 65,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\"> Pago por evento</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 74,
+    "text": "st.subheader(\"️ Serie histórica SPI-3 fenológico · 2007–2018\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 106,
+    "text": "st.subheader(\" Calculadora · ¿Activa el seguro?\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 123,
+    "text": "        submitted = st.form_submit_button(\" Evaluar reglas\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 139,
+    "text": "              <div class=\"kpi-value {'bad-red' if activo else 'ok-green'}\">{' ACTIVO' if activo else ' INACTIVO'}</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 149,
+    "text": "            tbl = pd.DataFrame([{\"Condición\": k, \"Se cumplió\": \" Sí\" if v else \" No\"} for k, v in conds.items()])"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 160,
+    "text": "st.subheader(\" Resumen anual 2007–2018 · Activación estimada\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 192,
+    "text": "            \"Activo?\": (\" SÍ\" if activo else (\"—\" if activo is None else \" NO\")),"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\1_Track_A_Indice_SPI.py",
+    "line": 198,
+    "text": "        if \"SÍ\" in str(val) or \"\" in str(val):"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\2_Track_B_Prediccion_Rendimiento.py",
+    "line": 28,
+    "text": "st.title(\" Track B — Predicción Rendimiento (kg/ha)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\2_Track_B_Prediccion_Rendimiento.py",
+    "line": 65,
+    "text": "    st.subheader(\" Entradas fenológicas (6 variables oficiales)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\2_Track_B_Prediccion_Rendimiento.py",
+    "line": 77,
+    "text": "        submitted = st.form_submit_button(\" Predecir rendimiento kg/ha\", type=\"primary\", use_container_width=True)"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\2_Track_B_Prediccion_Rendimiento.py",
+    "line": 80,
+    "text": "    st.subheader(\" Resultado predicción\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\2_Track_B_Prediccion_Rendimiento.py",
+    "line": 120,
+    "text": "st.subheader(\" Validación LOYO · Predicción vs Real (12 años, modelo leave-one-year-out)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 24,
+    "text": "st.title(\" Validación Histórica — N=2 Eventos Clave\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 43,
+    "text": "st.subheader(\" Reproducción en vivo (desde panel + API)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 57,
+    "text": "                rows_recalc.append({\"Departamento\": depto_labels.get(depto, depto), \"Año\": anio, \"Evento\": \"—\", \"Track B (kg/ha)\": \"No panel\", \"Track A activo?\": \"No panel\", \"Cumplimiento?\": \"️ SIN DATOS\"})"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 83,
+    "text": "                cumplio = \" ERROR API\""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 85,
+    "text": "                act_texto = \" SÍ\" if resp_a.get(\"activo\") else \" NO\""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 87,
+    "text": "                cumplio = \" CUMPLE\" if resp_a.get(\"activo\") else \" NO CUMPLE (esperado ACTIVO)\""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 124,
+    "text": "            st.success(\" Los 4 casos (2 años × 2 deptos) cumplen con activación esperada. Validación N=1 OK.\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 126,
+    "text": "            st.warning(f\"️ Faltan {total_rows-ok_rows} casos por cumplir la activación. Revisar CSV umbrales/features.\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\3_Validacion_Historica.py",
+    "line": 130,
+    "text": "st.subheader(\" Detalle por departamento (Inputs utilizados)\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 28,
+    "text": "st.title(\" Calculadora Actuarial — Prima / Indemnizaciones\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 42,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\">️ HE Ederington</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 47,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\"> Prima Actuarial (OFICIAL)</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 52,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\"> Riesgo Base</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 57,
+    "text": "    <div class=\"kpi-card\"><div class=\"kpi-label\"> Freq. activación (12a)</div>"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 62,
+    "text": "st.subheader(\" Escenario de portafolio\")"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 89,
+    "text": "        run = st.form_submit_button(\" Calcular escenario\", type=\"primary\", use_container_width=True)"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 115,
+    "text": "                    \"Activo?\": \" SÍ\" if activo else \"—\","
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\dashboard\\pages\\4_Calculadora_Actuarial.py",
+    "line": 126,
+    "text": "            n_act = (df[\"Activo?\"] == \" SÍ\").sum()"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\solucion_local_sai_f3\\tests\\_scan_emojis.py",
+    "line": 10,
+    "text": "# Regex emoji amplio (rangos unicode comunes usados anteriormente en el proyecto: ️️)"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 121,
+    "text": "# → Python 3.11.x "
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 189,
+    "text": "1. ** Resumen Ejecutivo** — 6 tarjetas RMSE / HE / Prima × 2 deptos; tabla validación histórica rápida y paneles 12 años."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 190,
+    "text": "2. ** Track A SPI-3** — serie SPI3 flor/des/cosecha, calculadora 5 reglas, activa activación 2007-2018 por año 24 filas."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 191,
+    "text": "3. ** Track B Rendimiento** — 6 inputs fenológicos, precarga año histórico sidebar, predicción kg/ha, LOYO pred-vs-real, RMSE LOYO/MAE/sesgo."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 192,
+    "text": "4. ** Validación Histórica N=2** — 2012 Roya y 2015 Niño. Semáforo CUMPLE/NO CUMPLE para los 2 deptos."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 193,
+    "text": "5. ** Calculadora Actuarial** — pago/ha, ha aseguradas, valor ha, sobrecarga, prima custom, flujo anual prima vs indemnizaciones 12 años, balance 12a."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 220,
+    "text": " AC1 Serialización reproducible ·  AC2 Package exporta todo ·  AC3 Wheel NO contiene grandes ·  AC4 API 9 endpoints ·  AC5 Dashboard 5 pags ·  AC6 Dash NO carga modelos ·  AC7 API NO entrena ·  AC8 Tarjetas KPI 6 + semáforo ·  AC9 Pág.valid N=2 × 2 ·  AC10 Calculadora actuarial ·  AC11 API/Dash NO sklearn joblib directo."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 226,
+    "text": "-  NO se reentrenó modelos NUNCA con datos nuevos hp."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 227,
+    "text": "-  NO se cambió hiperparámetros, se StandardScaler."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 228,
+    "text": "-  NO se añadió features, StandardScaler."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 229,
+    "text": "-  NO se modificó archivos de `Trabajo de Grado/` ni `Informe Mejorado/` - este archivo NUEVO."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 230,
+    "text": "-  NO se inventó layout dashboard NO se sale del mockup."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Guia_Solucion_SAI_F3.md",
+    "line": 231,
+    "text": "-  Solamente se añadió runtime override de `n_jobs=1` DESPUÉS de cargar el `.joblib` en RAM para evitar cuelgues en entornos sandbox — no afecta en 1e-6)."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\df_hr.xlsx",
+    "line": 243,
+    "text": "�� �对W�TA�\u0007�y6渑�FN@���\""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\df_tmax_aire.xlsx",
+    "line": 63,
+    "text": "���\u0000�K��)�O�|J�S\u0006�2J_|\u000e?���l��i�R��v�;G_(\u000e���\u0015N*.B��8L�Kp��U�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\df_tmax_aire.xlsx",
+    "line": 72,
+    "text": "]�CZ\u0019��Q��)�Oi|J�S:��������+�s6\u001b`�!�_9Vq�9�@ŝ�(��\u0015N*.B���«?��§�>��)�Oi|J�S:��������G�\u001a���+n���\u0014�@�]�/�G{N��b"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\df_tmax_aire.xlsx",
+    "line": 424,
+    "text": "\bX��!X�!Ӕ����o2�x�h�����v����*���r��U\u00036�\u0014�\u0005�A藶\u0005\u0013��]^u���,����kξA�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\df_tmin_aire.xlsx",
+    "line": 406,
+    "text": "���A��\u0012LOx�|v���/�Ş�p\u0006�ϸ��������Y�\u0001 ���\u0006R�!���\u0007Y޿�`W�\u001a�?\u0013�߲\u001f\u001a"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1044,
+    "text": "�s�7k:�u��&�\t�MX���d~\u0014�s���\u00049k����M�`�Mԑ��:�Y{<�s\"�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1225,
+    "text": "Bs\u0014ud�\u0010\u0011�\u0011\"�98?���\u0006!U�!�sk9���9!\u000f�=\"n�C��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1437,
+    "text": "1QG��\u00172�\u000eb�-̈CP�W�z�\u00001QG��\u00172ǅ\"3�\u0010�u������#3�BD�A���\u0011q\b�uHC��O�BC'D���\u0007�:d��!�BD\\���W��C��!ǹ�pG�I{�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1510,
+    "text": "7~\u0010�u��rb�+��#��~\u0016\"�Z]~��\u0004�#�0"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2283,
+    "text": "��.�5T�pR��5�Z\u0005s`o�>A_��Q\u0016��,އ\u0011�\u0014R8��!�D\u0016�*,^���\u0014��`��DGx�*P6y��\b�a�����=��Q\u0016�\u0019U\u0017-�W\u001b�����IC_^\bf\u0013\u0016�GY�f���.L0~��\u0017\u0017t;��Y�'.��x�\u000e�綇�����\u0011�㑷��Τ1~y."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2567,
+    "text": "�I\u0010b��숫o%X3�!�D\u0016�T0��\u0014��xͨ��o�\u0002��N}(�\u0011�M���\b���{�0��5��o*!X_�?Y>z"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2584,
+    "text": "�$.�{�\u001b}�]0��k�8�iF�\u0002\u0015���A�vD�.�A\u0016�'��[}�`\u001a��^�\u000fa���\u0014L\"��\u0013Y�6~��iF��<hW�� ������q\b�X��$�\u0007�j}�!L\"��*Y���ƏC�f�#ґ��\u0014/"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2602,
+    "text": "\u0002�PBzq\u0011�������-����\u0012�,^\u0018a��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2609,
+    "text": "�S\u0014� ޒ\b��� ^\u0018a~j}.8��\u0006㗓����G\u0010��b\u0010oq ޫ�s���7\u0018��\\�,}\u0014�0��8\u0010�ڑ�S� ����J�p�\u0018�$�xK\u0004���q��@��ݐ\u0016%\b8B��%��[��K^\u0017o� ^���\u0003�.�z+�;�>�l\u0004���!\u0011�[\"���q��@�˦nytG8\u001f�-�`r�/1\u0005\u0013A����\u0017\u0007�]6\u0005R.����U\u0002��\u0006A��\u0004�&�/\u0011�k����@�W��-j�o0\u0005s2o��\u0005����\u0014L���\u0012���x\u0010�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2614,
+    "text": "LI\u0004�V_~~r�� �}������%�n��9�9��Y�Kˉ��O�_\u001ad�^�ϿH}���D\u0010o� ^[?9~iF��<ewQ�\u0006A�v{\"��\u0012A����ft�ϗ����\u0016ޒ\b����\u0003�.6���\u0000�o[_�\u000f�ϼ����\b�5�:��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2615,
+    "text": "�4�6~�'\u0012\u0015$OٵE�Kԃ ޒ\b�he@�?���X��A�0jo=-\u001f���H�(-E\u00149���\u0010�]�.��k\u0012���X�˴�)�S0oq\u0004�o=�0'�6i��,^��]0��{�ϧ`���\u0014�ɴ��G!L��i!�c�^�s��!�-"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2666,
+    "text": "�\u0011�O�#|B�7���N�m��\u0011�wb\u0010��@�\u0017��)��\u001a�A\u0010�\b��I-00��]ݲ�p~�i*����>�'\u0012A�3��?�'��<�w����A�˛�@��zԗw"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2726,
+    "text": "�\u0011�\u0017u˸;�\u0019�A\u0010�\b����\u0017\u0007��S}�\u0006��7S"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2747,
+    "text": "�����A�0�\u001f�H�\u0011�7XBJ\u0004�.\u0004�}3�\u0017F��|�\"�o0��\b�]\b��f\u0010/�\u0010���\u0012)�\u0011&c��A\u0010�\b�����F����R��H�\u0015�t\u0006A�K\"�����8~i\u0004]���-�@�}��a\u0010�k�ؼ�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2812,
+    "text": "GH\u0011�����r�Id����0�\u0017F��7u�3�v�UA\u001b�A\u0016���\u0016�!�g��\u0000�����Ǉ�J�q"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2825,
+    "text": "�Qӷ�[��Q�W6�P\u0004�K\u0010�\b�>ʿ�\b��/�Qӷ�L���wa,����ܜ�����(�\u0002#���PtG���_0�\u0019��\u0016ލ@��A�0���+eW���/�\t��\u001a�ֹ���\u0018�[��2����\u0016\u0018�o��w;�Y�ZY�G\u001f���\u001f��S�wش�X\u001bzl�\b&7��\u0003��Ň\u0004ʛJH�I�}��\u0013�o,~�\u0012A�՗[_\u0018�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2907,
+    "text": "�@�\u0014�O��\u001fBJ���~\b}\u0017�\u00148\u0016��'?7K_��[�\u001f�/FЗ����\u0012Ҟ���1�\u0017F�\"��GG��\bK(_T"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2953,
+    "text": "�A\u0010�\b\\�\u0016�n���~{?~�EW�\u001b��M\u0004��s���\u0016�\u0003�~V��\u0004G����ɛ����\u0014"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2980,
+    "text": "��R�j���]��G�A\u0016�����Ej����S0R�P\bspֲ�x�/�/�0ݨ�O"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3127,
+    "text": "���}s\u0014_;\u0010��/�Զ��/� �Q\u0019�����%�\b�T�#]��An�_��O}��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3184,
+    "text": "}�h�З\u0018�\u0010��`\u0016�\u0004,^)���H��ݤ�Y_g\b����X\"�\bɌl���k6O7�QEަх�Q"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3213,
+    "text": "a��{0�wR#K�F/n���,���������{0�׌���B;s��{�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3215,
+    "text": "y�1\u0002Q�M�?����������{0�׌l}\u000f/\u001a#hw\u0017 \u000e�_g����;a>>c\u0016�\u0019�\u0011|\u0018�!hw��6Y�Ф1>\u0013�\u0017b�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3217,
+    "text": "��Ԩ�X�\u001b�\u0003������X�\u0007�x'd�\u0011��l����_g����{x���Od��\u0006����\u001b�\u0016k[_�C\"�WNBh���\u0005X���QtDm�����\u0002����}|&�x'b�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3265,
+    "text": "O}�)�D\u0016��Y��Y�f��ߋ>�Ob}�!L\"�w6>��f\u0016�\u0019��A~%�י����Y�\u001f�0�Ż�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 5239,
+    "text": "f���'��\u0013U�]��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 6091,
+    "text": "����i�\u0019؃�Ul��H�s�c}��\u001b�\u001b�Ě?&+T;3r����߷66����Vʘۙ�[\\�\u001b"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 6541,
+    "text": "�Ņo\"#�r\tsI��x3�nrv_����:(�|�5�h���o^�Z�z\u0007+2�Ǯ)F;�O�Kp^\\�MdnQ�f�����7��E1��Ǳ�(����ܢ\u0018��O�Kp^]�&2�\u0018*���"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 9011,
+    "text": "\u0004���Db\u0007�\u001fL�j\u0005�\u0003"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 10620,
+    "text": "���Z�).����|\u0018\u0002C��=l��8y��q\u000e>��U ��\u0012"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 10886,
+    "text": "�&�`Laf���2�k��\\'��kWŻ�+�l�� ��U��Og���\u0011\u0010�<r\t�@k9)\u0016���:B�������An��|��\bw\u001bz�\u0019��p�Ŏ�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 11539,
+    "text": "��t����\u000fє��S�\u0007��\bG�\u001a�����U�bw\u0006\u000e��k�KE�\u0004�l< �r��C5\u0017\u0004�-�/v�R?�V�\u001a��=����5�n\\����R\u0019r � ����_4(�*��Z^��%"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\df_hr.xlsx",
+    "line": 243,
+    "text": "�� �对W�TA�\u0007�y6渑�FN@���\""
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\df_tmax_aire.xlsx",
+    "line": 63,
+    "text": "���\u0000�K��)�O�|J�S\u0006�2J_|\u000e?���l��i�R��v�;G_(\u000e���\u0015N*.B��8L�Kp��U�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\df_tmax_aire.xlsx",
+    "line": 72,
+    "text": "]�CZ\u0019��Q��)�Oi|J�S:��������+�s6\u001b`�!�_9Vq�9�@ŝ�(��\u0015N*.B���«?��§�>��)�Oi|J�S:��������G�\u001a���+n���\u0014�@�]�/�G{N��b"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\df_tmax_aire.xlsx",
+    "line": 424,
+    "text": "\bX��!X�!Ӕ����o2�x�h�����v����*���r��U\u00036�\u0014�\u0005�A藶\u0005\u0013��]^u���,����kξA�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\df_tmin_aire.xlsx",
+    "line": 406,
+    "text": "���A��\u0012LOx�|v���/�Ş�p\u0006�ϸ��������Y�\u0001 ���\u0006R�!���\u0007Y޿�`W�\u001a�?\u0013�߲\u001f\u001a"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1044,
+    "text": "�s�7k:�u��&�\t�MX���d~\u0014�s���\u00049k����M�`�Mԑ��:�Y{<�s\"�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1225,
+    "text": "Bs\u0014ud�\u0010\u0011�\u0011\"�98?���\u0006!U�!�sk9���9!\u000f�=\"n�C��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1437,
+    "text": "1QG��\u00172�\u000eb�-̈CP�W�z�\u00001QG��\u00172ǅ\"3�\u0010�u������#3�BD�A���\u0011q\b�uHC��O�BC'D���\u0007�:d��!�BD\\���W��C��!ǹ�pG�I{�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 1510,
+    "text": "7~\u0010�u��rb�+��#��~\u0016\"�Z]~��\u0004�#�0"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2283,
+    "text": "��.�5T�pR��5�Z\u0005s`o�>A_��Q\u0016��,އ\u0011�\u0014R8��!�D\u0016�*,^���\u0014��`��DGx�*P6y��\b�a�����=��Q\u0016�\u0019U\u0017-�W\u001b�����IC_^\bf\u0013\u0016�GY�f���.L0~��\u0017\u0017t;��Y�'.��x�\u000e�綇�����\u0011�㑷��Τ1~y."
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2567,
+    "text": "�I\u0010b��숫o%X3�!�D\u0016�T0��\u0014��xͨ��o�\u0002��N}(�\u0011�M���\b���{�0��5��o*!X_�?Y>z"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2584,
+    "text": "�$.�{�\u001b}�]0��k�8�iF�\u0002\u0015���A�vD�.�A\u0016�'��[}�`\u001a��^�\u000fa���\u0014L\"��\u0013Y�6~��iF��<hW�� ������q\b�X��$�\u0007�j}�!L\"��*Y���ƏC�f�#ґ��\u0014/"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2602,
+    "text": "\u0002�PBzq\u0011�������-����\u0012�,^\u0018a��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2609,
+    "text": "�S\u0014� ޒ\b��� ^\u0018a~j}.8��\u0006㗓����G\u0010��b\u0010oq ޫ�s���7\u0018��\\�,}\u0014�0��8\u0010�ڑ�S� ����J�p�\u0018�$�xK\u0004���q��@��ݐ\u0016%\b8B��%��[��K^\u0017o� ^���\u0003�.�z+�;�>�l\u0004���!\u0011�[\"���q��@�˦nytG8\u001f�-�`r�/1\u0005\u0013A����\u0017\u0007�]6\u0005R.����U\u0002��\u0006A��\u0004�&�/\u0011�k����@�W��-j�o0\u0005s2o��\u0005����\u0014L���\u0012���x\u0010�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2614,
+    "text": "LI\u0004�V_~~r�� �}������%�n��9�9��Y�Kˉ��O�_\u001ad�^�ϿH}���D\u0010o� ^[?9~iF��<ewQ�\u0006A�v{\"��\u0012A����ft�ϗ����\u0016ޒ\b����\u0003�.6���\u0000�o[_�\u000f�ϼ����\b�5�:��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2615,
+    "text": "�4�6~�'\u0012\u0015$OٵE�Kԃ ޒ\b�he@�?���X��A�0jo=-\u001f���H�(-E\u00149���\u0010�]�.��k\u0012���X�˴�)�S0oq\u0004�o=�0'�6i��,^��]0��{�ϧ`���\u0014�ɴ��G!L��i!�c�^�s��!�-"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2666,
+    "text": "�\u0011�O�#|B�7���N�m��\u0011�wb\u0010��@�\u0017��)��\u001a�A\u0010�\b��I-00��]ݲ�p~�i*����>�'\u0012A�3��?�'��<�w����A�˛�@��zԗw"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2726,
+    "text": "�\u0011�\u0017u˸;�\u0019�A\u0010�\b����\u0017\u0007��S}�\u0006��7S"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2747,
+    "text": "�����A�0�\u001f�H�\u0011�7XBJ\u0004�.\u0004�}3�\u0017F��|�\"�o0��\b�]\b��f\u0010/�\u0010���\u0012)�\u0011&c��A\u0010�\b�����F����R��H�\u0015�t\u0006A�K\"�����8~i\u0004]���-�@�}��a\u0010�k�ؼ�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2812,
+    "text": "GH\u0011�����r�Id����0�\u0017F��7u�3�v�UA\u001b�A\u0016���\u0016�!�g��\u0000�����Ǉ�J�q"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2825,
+    "text": "�Qӷ�[��Q�W6�P\u0004�K\u0010�\b�>ʿ�\b��/�Qӷ�L���wa,����ܜ�����(�\u0002#���PtG���_0�\u0019��\u0016ލ@��A�0���+eW���/�\t��\u001a�ֹ���\u0018�[��2����\u0016\u0018�o��w;�Y�ZY�G\u001f���\u001f��S�wش�X\u001bzl�\b&7��\u0003��Ň\u0004ʛJH�I�}��\u0013�o,~�\u0012A�՗[_\u0018�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2907,
+    "text": "�@�\u0014�O��\u001fBJ���~\b}\u0017�\u00148\u0016��'?7K_��[�\u001f�/FЗ����\u0012Ҟ���1�\u0017F�\"��GG��\bK(_T"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2953,
+    "text": "�A\u0010�\b\\�\u0016�n���~{?~�EW�\u001b��M\u0004��s���\u0016�\u0003�~V��\u0004G����ɛ����\u0014"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 2980,
+    "text": "��R�j���]��G�A\u0016�����Ej����S0R�P\bspֲ�x�/�/�0ݨ�O"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3127,
+    "text": "���}s\u0014_;\u0010��/�Զ��/� �Q\u0019�����%�\b�T�#]��An�_��O}��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3184,
+    "text": "}�h�З\u0018�\u0010��`\u0016�\u0004,^)���H��ݤ�Y_g\b����X\"�\bɌl���k6O7�QEަх�Q"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3213,
+    "text": "a��{0�wR#K�F/n���,���������{0�׌���B;s��{�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3215,
+    "text": "y�1\u0002Q�M�?����������{0�׌l}\u000f/\u001a#hw\u0017 \u000e�_g����;a>>c\u0016�\u0019�\u0011|\u0018�!hw��6Y�Ф1>\u0013�\u0017b�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3217,
+    "text": "��Ԩ�X�\u001b�\u0003������X�\u0007�x'd�\u0011��l����_g����{x���Od��\u0006����\u001b�\u0016k[_�C\"�WNBh���\u0005X���QtDm�����\u0002����}|&�x'b�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 3265,
+    "text": "O}�)�D\u0016��Y��Y�f��ߋ>�Ob}�!L\"�w6>��f\u0016�\u0019��A~%�י����Y�\u001f�0�Ż�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 5239,
+    "text": "f���'��\u0013U�]��"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 6091,
+    "text": "����i�\u0019؃�Ul��H�s�c}��\u001b�\u001b�Ě?&+T;3r����߷66����Vʘۙ�[\\�\u001b"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 6541,
+    "text": "�Ņo\"#�r\tsI��x3�nrv_����:(�|�5�h���o^�Z�z\u0007+2�Ǯ)F;�O�Kp^\\�MdnQ�f�����7��E1��Ǳ�(����ܢ\u0018��O�Kp^]�&2�\u0018*���"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 9011,
+    "text": "\u0004���Db\u0007�\u001fL�j\u0005�\u0003"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 10620,
+    "text": "���Z�).����|\u0018\u0002C��=l��8y��q\u000e>��U ��\u0012"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 10886,
+    "text": "�&�`Laf���2�k��\\'��kWŻ�+�l�� ��U��Og���\u0011\u0010�<r\t�@k9)\u0016���:B�������An��|��\bw\u001bz�\u0019��p�Ŏ�"
+  },
+  {
+    "file": "C:\\Users\\mvale\\OneDrive\\Escritorio\\Caso 01\\Trabajo de Grado\\Nuestro Grupo\\GitHub_Equipo9_SeguroCafe\\data\\raw\\Precios-area-y-produccion-de-cafe-2026-3.xlsx",
+    "line": 11539,
+    "text": "��t����\u000fє��S�\u0007��\bG�\u001a�����U�bw\u0006\u000e��k�KE�\u0004�l< �r��C5\u0017\u0004�-�/v�R?�V�\u001a��=����5�n\\����R\u0019r � ����_4(�*��Z^��%"
+  }
+]

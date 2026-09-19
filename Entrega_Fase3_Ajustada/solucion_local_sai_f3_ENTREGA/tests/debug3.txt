@@ -1,0 +1,6 @@
+1
+2 imported track_b
+3 got func
+4 feats built
+5 coerced: {'spi3_floracion': -0.1963123140622514, 'spi3_desarrollo': -0.3609924665595361, 'spi3_cosecha': -0.107018845903456, 'tmax_mean_e9': 20.0, 'oni_mean': -0.6075, 'roya_dummy': 0}
+6 loader imported

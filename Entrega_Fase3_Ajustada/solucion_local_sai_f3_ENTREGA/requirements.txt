@@ -1,0 +1,33 @@
+# Dependencias completas - Solucion Local Autonoma SAI Cafetero
+# Incluye: capa de inferencia + API + Dashboard + herramientas build/dev.
+# No requiere ninguna fuente externa para la ejecucion en runtime.
+
+# --- Versiones de runtime oficiales (no tocar) ---
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.1.4
+scikit-learn==1.3.2
+matplotlib==3.7.5
+seaborn==0.13.2
+pillow==10.4.0
+openpyxl==3.1.5
+joblib==1.3.2
+threadpoolctl==3.2.0
+
+# --- Build wheel ---
+hatchling>=1.24
+build>=1.1,<2.0
+wheel>=0.43
+
+# --- API FastAPI ---
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.27,<1.0
+pydantic>=2.5,<3.0
+httpx>=0.27,<1.0
+
+# --- Dashboard Streamlit ---
+streamlit>=1.32,<2.0
+plotly>=5.18,<6.0
+
+# --- Tests ---
+pytest>=8.0,<9.0

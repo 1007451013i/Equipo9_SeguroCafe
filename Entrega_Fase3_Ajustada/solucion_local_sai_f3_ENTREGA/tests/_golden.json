@@ -1,0 +1,50 @@
+{
+  "predictions": {
+    "Narino_2007": {
+      "year": 2007,
+      "departamento": "Narino",
+      "y_real_kg_ha": 1298.9493,
+      "y_pred_kg_ha": 1150.273445185,
+      "features": {
+        "spi3_floracion": -0.1963123140622514,
+        "spi3_desarrollo": -0.3609924665595361,
+        "spi3_cosecha": -0.107018845903456,
+        "tmax_mean_e9": 20.0,
+        "oni_mean": -0.6075,
+        "roya_dummy": 0.0
+      }
+    },
+    "Narino_2012": {
+      "year": 2012,
+      "departamento": "Narino",
+      "y_real_kg_ha": 1009.7817,
+      "y_pred_kg_ha": 974.183513203,
+      "features": {
+        "spi3_floracion": 0.3530002754830546,
+        "spi3_desarrollo": -0.862523336851281,
+        "spi3_cosecha": -0.5772881227984482,
+        "tmax_mean_e9": 20.39,
+        "oni_mean": -0.0633333333333333,
+        "roya_dummy": 1.0
+      }
+    },
+    "Quindio_2015": {
+      "year": 2015,
+      "departamento": "Quindio",
+      "y_real_kg_ha": 1148.9857,
+      "y_pred_kg_ha": 1124.381196279,
+      "features": {
+        "spi3_floracion": -0.4066499465970844,
+        "spi3_desarrollo": -1.3543612672994316,
+        "spi3_cosecha": -0.9206907545417508,
+        "tmax_mean_e9": 30.89,
+        "oni_mean": 1.5483333333333331,
+        "roya_dummy": 0.0
+      }
+    }
+  },
+  "sha256_joblib": {
+    "Narino": "232cf1c43d6c0159df1dbd72ff78f17c17484c1b62e6dc597d4ce6ae7de38d63",
+    "Quindio": "ddfabe44f5c20900e877bc5b939630d0bbf3ec7483c30178941543e1757e5fa9"
+  }
+}

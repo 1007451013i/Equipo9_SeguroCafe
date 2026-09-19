@@ -1,0 +1,8 @@
+T1 start
+T1 loaded classes: Nar=ExtraTreesRegressor Qui=RandomForestRegressor
+T1 Nar params: md=3 ne=400 mf=0.6 msl=2 rs=42
+T1 Qui params: md=2 ne=400 mf=1.0 msl=1 rs=42
+T1 pred Nar 2007=1150.273445185 expected=1150.273445185
+T1 pred Qui 2015=1124.381196279 expected=1124.381196279
+T1 diffs Nar=4.96811480843462e-10 Qui=4.652065399568528e-10
+T1 ALL OK joblib predict match golden

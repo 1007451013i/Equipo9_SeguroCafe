@@ -1,0 +1,13 @@
+departamento,track,kpi,valor,modelo
+Narino,B_D1,RMSE_holdout_best,15.1,RidgeCV_AlphaLog
+Quindio,B_D1,RMSE_holdout_best,45.7,ExtraTrees_Eq9
+Narino,HE,HE_varianza,0.05,indice_SPI3
+Narino,HE,Riesgo_base,47.36,indice_SPI3
+Narino,HE,Prima_act,6.36,indice_SPI3
+Quindio,HE,HE_varianza,0.11,indice_SPI3
+Quindio,HE,Riesgo_base,46.71,indice_SPI3
+Quindio,HE,Prima_act,10.15,indice_SPI3
+Narino,A_N2,R2_SPI_inSample,0.639,Ols
+Quindio,A_N2,R2_SPI_inSample,0.637,Ols
+Narino,A_N3,Pct_activacion_total,24.0,P10/P90
+Quindio,A_N3,Pct_activacion_total,24.0,P10/P90

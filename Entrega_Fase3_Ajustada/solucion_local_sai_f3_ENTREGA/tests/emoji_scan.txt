@@ -1,0 +1,155 @@
+plotly FAIL No module named 'plotly'
+TOTAL_FINDINGS=152
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md L162: 1. ** Resumen ejecutivo** – 6 tarjetas KPI (RMSE, HE, Prima × 2 deptos), validación
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md L164: 2. ** Track A SPI-3** – Serie SPI-3, umbrales P10/P90, semáforo activación y tabla
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md L166: 3. ** Track B Rendimiento** – 6 inputs fenológicos, tarjeta predicción kg/ha,
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md L168: 4. ** Validación histórica** – 2012 Roya y 2015 Niño; semáforo CUMPLE/NO CUMPLE.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md L169: 5. ** Calculadora actuarial** – pago/ha, ha aseguradas, prima, sobrecarga, flujo
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\README.md L244: Package: `cafe-sai-modelos-equipo9==0.1.0` · Python: 3.11 · Local-only · Windows PowerShell 
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\run_dashboard.ps1 L47: Write-Host " Dashboard en http://${Host}:${Port}  (API: $ApiBase)" -ForegroundColor DarkGreen
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\setup_dev.ps1 L44: Write-Host "    Python venv: $venvPy" -ForegroundColor Green
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\setup_dev.ps1 L72:     Write-Host "    Wheel: $($wheelExistente.Name)" -ForegroundColor Green
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\setup_dev.ps1 L75:     Write-Host "    Instalado." -ForegroundColor Green
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\setup_dev.ps1 L82: Write-Host "`n️  Setup dev completado." -ForegroundColor Green
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L32:     page_icon="",
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L50:             "️ API no disponible en "
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L145:     st.title(" Panel SAI Cafetero")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L152:     st.page_link("app.py", label=" Resumen ejecutivo", icon="")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L154:         ("1_Track_A_Indice_SPI", ""),
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L155:         ("2_Track_B_Prediccion_Rendimiento", ""),
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L156:         ("3_Validacion_Historica", ""),
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L157:         ("4_Calculadora_Actuarial", ""),
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L172: st.title(" Seguro Agrícola Indexado Cafetero — Panel Ejecutivo")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L183: st.markdown("##  KPIs del proyecto (oficiales, NO recalculados)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L218:               <div class="kpi-label"> RMSE Holdout · {depto_labels.get(depto, depto)}</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L230:               <div class="kpi-label">️ HE Ederington · {depto_labels.get(depto, depto)}</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L242:               <div class="kpi-label"> Prima Actuarial · {depto_labels.get(depto, depto)}</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L251: st.markdown("## ️ Validación histórica rápida (Track A)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L286: st.markdown("##  Resumen por departamento (panel entrenamiento)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L289:     with st.expander(f" {depto_labels.get(depto, depto)} — 12 años · {len(FEATS_ORDER)} vars fenológicas"):
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\app.py L301:     " **Nota:** Este panel NO ejecuta los modelos directamente. "
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L31: st.title(" Track A — Índice Climático SPI-3")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L50:     <div class="kpi-card"><div class="kpi-label">️ Sequía P10 ({depto_labels.get(depto, depto)})</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L55:     <div class="kpi-card"><div class="kpi-label"> Exceso P90 ({depto_labels.get(depto, depto)})</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L60:     <div class="kpi-card"><div class="kpi-label"> % Activación observada</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L65:     <div class="kpi-card"><div class="kpi-label"> Pago por evento</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L74: st.subheader("️ Serie histórica SPI-3 fenológico · 2007–2018")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L106: st.subheader(" Calculadora · ¿Activa el seguro?")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L123:         submitted = st.form_submit_button(" Evaluar reglas")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L139:               <div class="kpi-value {'bad-red' if activo else 'ok-green'}">{' ACTIVO' if activo else ' INACTIVO'}</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L149:             tbl = pd.DataFrame([{"Condición": k, "Se cumplió": " Sí" if v else " No"} for k, v in conds.items()])
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L160: st.subheader(" Resumen anual 2007–2018 · Activación estimada")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L192:             "Activo?": (" SÍ" if activo else ("—" if activo is None else " NO")),
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\1_Track_A_Indice_SPI.py L198:         if "SÍ" in str(val) or "" in str(val):
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\2_Track_B_Prediccion_Rendimiento.py L28: st.title(" Track B — Predicción Rendimiento (kg/ha)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\2_Track_B_Prediccion_Rendimiento.py L65:     st.subheader(" Entradas fenológicas (6 variables oficiales)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\2_Track_B_Prediccion_Rendimiento.py L77:         submitted = st.form_submit_button(" Predecir rendimiento kg/ha", type="primary", use_container_width=True)
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\2_Track_B_Prediccion_Rendimiento.py L80:     st.subheader(" Resultado predicción")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\2_Track_B_Prediccion_Rendimiento.py L120: st.subheader(" Validación LOYO · Predicción vs Real (12 años, modelo leave-one-year-out)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L24: st.title(" Validación Histórica — N=2 Eventos Clave")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L43: st.subheader(" Reproducción en vivo (desde panel + API)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L57:                 rows_recalc.append({"Departamento": depto_labels.get(depto, depto), "Año": anio, "Evento": "—", "Track B (kg/ha)": "No panel", "Track A activo?": "No panel", "Cumplimiento?": "️ SIN D
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L83:                 cumplio = " ERROR API"
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L85:                 act_texto = " SÍ" if resp_a.get("activo") else " NO"
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L87:                 cumplio = " CUMPLE" if resp_a.get("activo") else " NO CUMPLE (esperado ACTIVO)"
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L124:             st.success(" Los 4 casos (2 años × 2 deptos) cumplen con activación esperada. Validación N=1 OK.")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L126:             st.warning(f"️ Faltan {total_rows-ok_rows} casos por cumplir la activación. Revisar CSV umbrales/features.")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\3_Validacion_Historica.py L130: st.subheader(" Detalle por departamento (Inputs utilizados)")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L28: st.title(" Calculadora Actuarial — Prima / Indemnizaciones")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L42:     <div class="kpi-card"><div class="kpi-label">️ HE Ederington</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L47:     <div class="kpi-card"><div class="kpi-label"> Prima Actuarial (OFICIAL)</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L52:     <div class="kpi-card"><div class="kpi-label"> Riesgo Base</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L57:     <div class="kpi-card"><div class="kpi-label"> Freq. activación (12a)</div>
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L62: st.subheader(" Escenario de portafolio")
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L89:         run = st.form_submit_button(" Calcular escenario", type="primary", use_container_width=True)
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L115:                     "Activo?": " SÍ" if activo else "—",
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\dashboard\pages\4_Calculadora_Actuarial.py L126:             n_act = (df["Activo?"] == " SÍ").sum()
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\solucion_local_sai_f3\tests\_scan_emojis.py L10: # Regex emoji amplio (rangos unicode comunes usados anteriormente en el proyecto: ️️)
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L121: # → Python 3.11.x 
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L189: 1. ** Resumen Ejecutivo** — 6 tarjetas RMSE / HE / Prima × 2 deptos; tabla validación histórica rápida y paneles 12 años.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L190: 2. ** Track A SPI-3** — serie SPI3 flor/des/cosecha, calculadora 5 reglas, activa activación 2007-2018 por año 24 filas.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L191: 3. ** Track B Rendimiento** — 6 inputs fenológicos, precarga año histórico sidebar, predicción kg/ha, LOYO pred-vs-real, RMSE LOYO/MAE/sesgo.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L192: 4. ** Validación Histórica N=2** — 2012 Roya y 2015 Niño. Semáforo CUMPLE/NO CUMPLE para los 2 deptos.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L193: 5. ** Calculadora Actuarial** — pago/ha, ha aseguradas, valor ha, sobrecarga, prima custom, flujo anual prima vs indemnizaciones 12 años, balance 12a.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L220:  AC1 Serialización reproducible ·  AC2 Package exporta todo ·  AC3 Wheel NO contiene grandes ·  AC4 API 9 endpoints ·  AC5 Dashboard 5 pags ·  AC6 Dash NO carga modelos ·  AC7 API NO entrena · 
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L226: -  NO se reentrenó modelos NUNCA con datos nuevos hp.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L227: -  NO se cambió hiperparámetros, se StandardScaler.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L228: -  NO se añadió features, StandardScaler.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L229: -  NO se modificó archivos de `Trabajo de Grado/` ni `Informe Mejorado/` - este archivo NUEVO.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L230: -  NO se inventó layout dashboard NO se sale del mockup.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Guia_Solucion_SAI_F3.md L231: -  Solamente se añadió runtime override de `n_jobs=1` DESPUÉS de cargar el `.joblib` en RAM para evitar cuelgues en entornos sandbox — no afecta en 1e-6).
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\df_hr.xlsx L243: �� �对W�TA��y6渑�FN@���"
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\df_tmax_aire.xlsx L63: ��� �K��)�O�|J�S�2J_|?���l��i�R��v�;G_(���N*.B��8L�Kp��U�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\df_tmax_aire.xlsx L72: ]�CZ��Q��)�Oi|J�S:��������+�s6`�!�_9Vq�9�@ŝ�(��N*.B���«?��§�>��)�Oi|J�S:��������G����+n����@�]�/�G{N��b
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\df_tmax_aire.xlsx L424: X��!X�!Ӕ����o2�x�h�����v����*���r��U6���A藶��]^u���,����kξA�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\df_tmin_aire.xlsx L406: ���A��LOx�|v���/�Ş�p�ϸ��������Y� ���R�!���Y޿�`W��?�߲
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1044: �s�7k:�u��&�	�MX���d~�s���9k����M�`�Mԑ��:�Y{<�s"�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1225: Bsud��"�98?���!U�!�sk9���9!�="n�C��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1437: 1QG��2�b�-̈CP�W�z� 1QG��2ǅ"3��u������#3�BD�A���q�uHC��O�BC'D����:d��!�BD\���W��C��!ǹ�pG�I{�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1510: 7~�u��rb�+��#��~"�Z]~���#�0
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2283: ��.�5T�pR��5�Zs`o�>A_��Q��,އ�R8��!�D�*,^�����`��DGx�*P6y���a�����=��Q�U-�W�����IC_^f�GY�f���.L0~��t;��Y�'.��x��綇������㑷��Τ1~y.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2567: �Ib��숫o%X3�!�D�T0����xͨ��o���N}(��M������{�0��5��o*!X_�?Y>z
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2584: �$.�{�}�]0��k�8�iF����A�vD�.�A�'��[}�`��^�a���L"��Y�6~��iF��<hW�� ������q�X��$��j}�!L"��*Y���ƏC�f�#ґ��/
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2602: �PBzq�������-�����,^a��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2609: �S� ޒ��� ^a~j}.8��㗓����G��boq ޫ�s���7��\�,}�0��8�ڑ�S� ����J�p��$�xK���q��@��ݐ%8B��%��[��K^o� ^����.�z+�;�>�l���!�["���q��@�˦nytG8�-�`r�/1A�����]6R.����U��A���&�/�k����@�W��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2614: LI�V_~~r�� �}������%�n��9�9��Y�Kˉ��O�_d�^�ϿH}���Do� ^[?9~iF��<ewQ�A�v{"��A����ft�ϗ����ޒ�����.6��� �o[_��ϼ�����5�:��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2615: �4�6~�'$OٵE�Kԃ ޒ�he@�?���X��A�0jo=-���H�(-E9����]�.��k���X�˴�)�S0oq�o=�0'�6i��,^��]0��{�ϧ`����ɴ��G!L��i!�c�^�s��!�-
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2666: ��O�#|B�7���N�m���wb��@���)���A���I-00��]ݲ�p~�i*����>�'A�3��?�'��<�w����A�˛�@��zԗw
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2726: ��u˸;��A�������S}���7S
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2747: �����A�0��H��7XBJ�.�}3�F��|�"�o0���]��f/����)�&c��A������F����R��H��tA�K"�����8~i]���-�@�}��a�k�ؼ�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2812: GH�����r�Id����0�F��7u�3�v�UA�A����!�g�� �����Ǉ�J�q
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2825: �Qӷ�[��Q�W6�P�K��>ʿ���/�Qӷ�L���wa,����ܜ�����(�#���PtG���_0���ލ@��A�0���+eW���/�	���ֹ����[��2�����o��w;�Y�ZY�G�����S�wش�Xzl�&7����ŇʛJH�I�}���o,~�A�՗[_�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2907: �@��O��BJ���~}�8��'?7K_��[��/FЗ����Ҟ���1�F�"��GG��K(_T
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2953: �A�\��n���~{?~�EW���M��s�����~V��G����ɛ����
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2980: ��R�j���]��G�A�����Ej����S0R�Pspֲ�x�/�/�0ݨ�O
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3127: ���}s_;��/�Զ��/� �Q�����%��T�#]��An�_��O}��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3184: }�h�З���`�,^)���H��ݤ�Y_g����X"�Ɍl���k6O7�QEަх�Q
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3213: a��{0�wR#K�F/n���,���������{0�׌���B;s��{�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3215: y�1Q�M�?����������{0�׌l}/#hw �_g����;a>>c��|�!hw��6Y�Ф1>�b�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3217: ��Ԩ�X��������X��x'd���l����_g����{x���Od�������k[_�C"�WNBh���X���QtDm���������}|&�x'b�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3265: O}�)�D��Y��Y�f��ߋ>�Ob}�!L"�w6>��f���A~%�י����Y��0�Ż�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L5239: f���'��U�]��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L6091: ����i�؃�Ul��H�s�c}����Ě?&+T;3r����߷66����Vʘۙ�[\�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L6541: �Ņo"#�r	sI��x3�nrv_����:(�|�5�h���o^�Z�z+2�Ǯ)F;�O�Kp^\�MdnQ�f�����7��E1��Ǳ�(����ܢ��O�Kp^]�&2�*���
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L9011: ���Db�L�j�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L10620: ���Z�).����|C��=l��8y��q>��U ��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L10886: �&�`Laf���2�k��\'��kWŻ�+�l�� ��U��Og����<r	�@k9)���:B�������An��|��wz���p�Ŏ�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L11539: ��t����є��S���G������U�bw��k�KE��l< �r��C5�-�/v�R?�V���=����5�n\����Rr � ����_4(�*��Z^��%
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\df_hr.xlsx L243: �� �对W�TA��y6渑�FN@���"
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\df_tmax_aire.xlsx L63: ��� �K��)�O�|J�S�2J_|?���l��i�R��v�;G_(���N*.B��8L�Kp��U�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\df_tmax_aire.xlsx L72: ]�CZ��Q��)�Oi|J�S:��������+�s6`�!�_9Vq�9�@ŝ�(��N*.B���«?��§�>��)�Oi|J�S:��������G����+n����@�]�/�G{N��b
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\df_tmax_aire.xlsx L424: X��!X�!Ӕ����o2�x�h�����v����*���r��U6���A藶��]^u���,����kξA�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\df_tmin_aire.xlsx L406: ���A��LOx�|v���/�Ş�p�ϸ��������Y� ���R�!���Y޿�`W��?�߲
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1044: �s�7k:�u��&�	�MX���d~�s���9k����M�`�Mԑ��:�Y{<�s"�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1225: Bsud��"�98?���!U�!�sk9���9!�="n�C��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1437: 1QG��2�b�-̈CP�W�z� 1QG��2ǅ"3��u������#3�BD�A���q�uHC��O�BC'D����:d��!�BD\���W��C��!ǹ�pG�I{�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L1510: 7~�u��rb�+��#��~"�Z]~���#�0
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2283: ��.�5T�pR��5�Zs`o�>A_��Q��,އ�R8��!�D�*,^�����`��DGx�*P6y���a�����=��Q�U-�W�����IC_^f�GY�f���.L0~��t;��Y�'.��x��綇������㑷��Τ1~y.
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2567: �Ib��숫o%X3�!�D�T0����xͨ��o���N}(��M������{�0��5��o*!X_�?Y>z
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2584: �$.�{�}�]0��k�8�iF����A�vD�.�A�'��[}�`��^�a���L"��Y�6~��iF��<hW�� ������q�X��$��j}�!L"��*Y���ƏC�f�#ґ��/
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2602: �PBzq�������-�����,^a��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2609: �S� ޒ��� ^a~j}.8��㗓����G��boq ޫ�s���7��\�,}�0��8�ڑ�S� ����J�p��$�xK���q��@��ݐ%8B��%��[��K^o� ^����.�z+�;�>�l���!�["���q��@�˦nytG8�-�`r�/1A�����]6R.����U��A���&�/�k����@�W��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2614: LI�V_~~r�� �}������%�n��9�9��Y�Kˉ��O�_d�^�ϿH}���Do� ^[?9~iF��<ewQ�A�v{"��A����ft�ϗ����ޒ�����.6��� �o[_��ϼ�����5�:��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2615: �4�6~�'$OٵE�Kԃ ޒ�he@�?���X��A�0jo=-���H�(-E9����]�.��k���X�˴�)�S0oq�o=�0'�6i��,^��]0��{�ϧ`����ɴ��G!L��i!�c�^�s��!�-
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2666: ��O�#|B�7���N�m���wb��@���)���A���I-00��]ݲ�p~�i*����>�'A�3��?�'��<�w����A�˛�@��zԗw
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2726: ��u˸;��A�������S}���7S
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2747: �����A�0��H��7XBJ�.�}3�F��|�"�o0���]��f/����)�&c��A������F����R��H��tA�K"�����8~i]���-�@�}��a�k�ؼ�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2812: GH�����r�Id����0�F��7u�3�v�UA�A����!�g�� �����Ǉ�J�q
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2825: �Qӷ�[��Q�W6�P�K��>ʿ���/�Qӷ�L���wa,����ܜ�����(�#���PtG���_0���ލ@��A�0���+eW���/�	���ֹ����[��2�����o��w;�Y�ZY�G�����S�wش�Xzl�&7����ŇʛJH�I�}���o,~�A�՗[_�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2907: �@��O��BJ���~}�8��'?7K_��[��/FЗ����Ҟ���1�F�"��GG��K(_T
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2953: �A�\��n���~{?~�EW���M��s�����~V��G����ɛ����
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L2980: ��R�j���]��G�A�����Ej����S0R�Pspֲ�x�/�/�0ݨ�O
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3127: ���}s_;��/�Զ��/� �Q�����%��T�#]��An�_��O}��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3184: }�h�З���`�,^)���H��ݤ�Y_g����X"�Ɍl���k6O7�QEަх�Q
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3213: a��{0�wR#K�F/n���,���������{0�׌���B;s��{�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3215: y�1Q�M�?����������{0�׌l}/#hw �_g����;a>>c��|�!hw��6Y�Ф1>�b�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3217: ��Ԩ�X��������X��x'd���l����_g����{x���Od�������k[_�C"�WNBh���X���QtDm���������}|&�x'b�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L3265: O}�)�D��Y��Y�f��ߋ>�Ob}�!L"�w6>��f���A~%�י����Y��0�Ż�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L5239: f���'��U�]��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L6091: ����i�؃�Ul��H�s�c}����Ě?&+T;3r����߷66����Vʘۙ�[\�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L6541: �Ņo"#�r	sI��x3�nrv_����:(�|�5�h���o^�Z�z+2�Ǯ)F;�O�Kp^\�MdnQ�f�����7��E1��Ǳ�(����ܢ��O�Kp^]�&2�*���
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L9011: ���Db�L�j�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L10620: ���Z�).����|C��=l��8y��q>��U ��
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L10886: �&�`Laf���2�k��\'��kWŻ�+�l�� ��U��Og����<r	�@k9)���:B�������An��|��wz���p�Ŏ�
+C:\Users\mvale\OneDrive\Escritorio\Caso 01\Trabajo de Grado\Nuestro Grupo\GitHub_Equipo9_SeguroCafe\data\raw\Precios-area-y-produccion-de-cafe-2026-3.xlsx L11539: ��t����є��S���G������U�bw��k�KE��l< �r��C5�-�/v�R?�V���=����5�n\����Rr � ����_4(�*��Z^��%
+DONE

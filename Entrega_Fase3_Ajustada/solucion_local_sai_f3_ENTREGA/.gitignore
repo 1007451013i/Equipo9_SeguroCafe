@@ -1,0 +1,26 @@
+# Artefactos grandes y runtime
+# Por defecto NO versionamos .joblib genericos en models_artifacts, EXCEPTO
+# los 2 modelos OFICIALES serializados de Entrega_2 (son ARTEFACTOS ESENCIALES
+# para que la solucion local sea autonoma y portable).
+models_artifacts/*.joblib
+!models_artifacts/narino_extratrees_entrega2.joblib
+!models_artifacts/quindio_randomforest_entrega2.joblib
+dist/
+build/
+*.egg-info/
+.eggs/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.env
