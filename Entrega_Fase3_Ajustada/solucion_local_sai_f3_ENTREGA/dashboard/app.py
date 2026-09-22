@@ -603,7 +603,9 @@ with col_act:
         st.caption(
             "Reglas: C1=min_anual<P10, C2=min_e9<P10, C3=cosecha<P10, "
             "C4=n_sequia_e9>=2, C5=roya_shock=1 OR roya_dummy=1. "
-            "Activa SI = pago por evento de 1.2M COP/ha (configurable en calculadora)."
+            "Activa SI indica un anio climaticamente exigente; no constituye disparo de pago. "
+            "La regla activa en la mayoria de los anios del panel (6 de 12 en Narino, 9 de 12 en Quindio), "
+            "por lo que tiene alta tasa de falsas alarmas. Ver manual de usuario, advertencia 8."
         )
     else:
         st.info("Sin datos suficientes para generar tabla de activaciones.")
@@ -786,6 +788,11 @@ with col_loyo_met:
                 "Sesgo medio": _fmt_num(sesgo, 2),
             })
         st.dataframe(pd.DataFrame(rows_m), use_container_width=True, hide_index=True)
+        st.caption(
+            "Calculado sobre el archivo de validacion del artefacto, que contiene varias corridas por anio. "
+            "Las metricas oficiales del modelo (RMSE 100.1 kg/ha en Narino y 90.5 kg/ha en Quindio) "
+            "son las del bloque Metricas tecnicas del scoring y las del reporte tecnico de experimentos."
+        )
     else:
         st.info("Sin metricas.")
 
